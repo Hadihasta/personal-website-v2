@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="   bg-linear-65 from-purple-500 to-pink-500 font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -22,6 +22,15 @@ export default function Home() {
           </li>
           <li className="tracking-[-.01em]">
             Save and see your changes instantly.
+             <div
+          className=" flex text-xl md:text-3xl mt-4 gap-2 fade-icon cursor-pointer "
+        >
+          <i className="i-tabler-brand-github "></i>
+          <i className="i-tabler-brand-linkedin "></i>
+          <i className="i-tabler-brand-twitter-filled "></i>
+          <i className="i-tabler-mail "></i>
+          <i className="i-tabler-file-cv "></i>
+        </div>
           </li>
         </ol>
 
