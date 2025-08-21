@@ -1,6 +1,7 @@
 import Navbar from '@/components/global/Navbar'
 import MainVektorBG from '@/components/vektorComponent/MainVektorBG'
 import MainDisplay from '@/components/home/MainDisplay'
+import RecentlyPost from '@/components/home/secondary/RecentlyPost'
 
 export default function Home() {
   return (
@@ -20,6 +21,14 @@ export default function Home() {
         </div>
         <MainVektorBG />
         <MainDisplay />
+        <div id="secondary_section">
+          <div className=" text-rowdies text-blueDisable font-bold text-48 flex  justify-center mt-100 ">
+            Recently Post
+          </div>
+          <div>
+            <RecentlyPost />
+          </div>
+        </div>
 
         {/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div>section main</div>

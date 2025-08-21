@@ -8,14 +8,14 @@ const SectionRight = () => {
         alt="vektor_left"
         width={250}
         height={250}
-        className="fixed top-[240px]"
+        className="absolute top-[155px]"
       ></Image>
       <Image
         src="/asset/personal/MediumChair-no-bg.svg"
         alt="vektor_left"
-        width={250}
-        height={250}
-        className="fixed"
+        width={300}
+        height={300}
+        className="relative top-[-30px] right-[4px]"
       ></Image>
     </div>
   )

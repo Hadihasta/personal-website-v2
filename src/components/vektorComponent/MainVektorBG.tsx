@@ -3,7 +3,7 @@ import Image from 'next/image'
 const MainVektorBG = () => {
   return (
   <div className="flex justify-between ">
-           <div className="fixed left-[-40px]">
+           <div className="absolute left-[-60px] top-[40px]">
              <Image
                src="/asset/vektor/left-vektor-main.svg"
                alt="vektor_left"
@@ -12,7 +12,7 @@ const MainVektorBG = () => {
                className=""
              ></Image>
            </div>
-           <div className="fixed right-[-40px]">
+           <div className="absolute right-[-60px] top-[40px]">
              <Image
                src="/asset/vektor/right-vektor-main.svg"
                alt="vektor_right"
