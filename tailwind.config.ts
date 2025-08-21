@@ -1,4 +1,3 @@
-
 import { iconsPlugin, getIconCollections } from '@egoist/tailwindcss-icons'
 
 /** @type {import('tailwindcss').Config} */
@@ -33,8 +32,9 @@ const config = {
       },
 
       fontFamily: {
-        arial: ['Arial', 'Helvetica', 'sans-serif'],
-        outfit: ['var(--font-outfit)'],
+        staat: ['var(--font-staatliches)'],
+        rowdies: ['var(--font-rowdies)'],
+        robotoSlab: ['var(--font-roboto-slab)'],
       },
     },
   },

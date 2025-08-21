@@ -1,16 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @config "../../tailwind.config.ts";
 
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
+--default-font-family: var(--font-robotoslab);
 } */
-/* 
-@theme inline {
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-roboto: var(--font-robotoslab);
+  --font-staatliches: var(--font-staatliches);
+
 } */
 
 /* @media (prefers-color-scheme: dark) {
@@ -20,8 +22,28 @@
   }
 } */
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+html, body {
+  font-family: var(--font-robotoslab), 
+}
+
+
+@theme {
+  
+  /* color */
+  --color-muteGrey: #2d3e50;
+  --color-blueDark: #1e293b;
+  --color-blueDisable: #4E74A7;
+  
+  /* text */
+  --text-24: 24px;
+  --text-36: 36px;
+
+  /* Border radius */
+    --radius-50: 50px; 
 }
