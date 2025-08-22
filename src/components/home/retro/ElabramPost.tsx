@@ -5,9 +5,9 @@ const ElabramPost = () => {
     <div>
       {/*BARRIER  */}
       <div className="flex flex-row justify-center items-center text-blueDisable gap-3  h-50 ">
-        <div>2025</div>
+        <div className='font-bold'>2025</div>
         <div className="h-px max-w-[30px] bg-blueDisable flex-1"></div>
-        <div className="grow">Elabram Indonesia</div>
+        <div className="grow font-extrabold">Elabram Indonesia</div>
       </div>
       {/* PICTURE IMAGE */}
       <div className="flex flex-row justify-evenly ">

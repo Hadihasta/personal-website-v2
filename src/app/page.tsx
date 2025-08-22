@@ -3,11 +3,11 @@ import MainVektorBG from '@/components/vektorComponent/MainVektorBG'
 import MainDisplay from '@/components/home/MainDisplay'
 import RecentlyPost from '@/components/home/post/RecentlyPost'
 import ElabramPost from '@/components/home/retro/ElabramPost'
-import Footer from '@/components/home/footer/footer'
+import FooterLayout from '@/components/home/footer/FooterLayout'
 
 export default function Home() {
   return (
-    <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen">
+    <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default">
       <MainVektorBG />
       <div
         id="layout"
@@ -17,7 +17,7 @@ export default function Home() {
           id="logo-main"
           className="flex"
         >
-          <div className=" text-white font-staat text-36  cursor-pointer">HADI</div>
+          <div className=" text-white font-staat text-36  cursor-pointer ">HADI</div>
         </div>
         <div>
           <Navbar />
@@ -39,9 +39,9 @@ export default function Home() {
         </div>
         </div>
 
-       
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-          <Footer/>
+       {/* Footer */}
+      <footer className='mt-50'>
+          <FooterLayout/>
       </footer>
       </div>
     </div>
