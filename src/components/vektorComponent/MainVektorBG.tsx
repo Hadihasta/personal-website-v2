@@ -9,10 +9,10 @@ const MainVektorBG = () => {
                alt="vektor_left"
                width={250}
                height={250}
-               className=""
+          
              ></Image>
            </div>
-           <div className="absolute right-[-60px] top-[40px]">
+           <div className="absolute right-[0px] top-[40px]">
              <Image
                src="/asset/vektor/right-vektor-main.svg"
                alt="vektor_right"

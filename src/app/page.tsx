@@ -1,11 +1,14 @@
 import Navbar from '@/components/global/Navbar'
 import MainVektorBG from '@/components/vektorComponent/MainVektorBG'
 import MainDisplay from '@/components/home/MainDisplay'
-import RecentlyPost from '@/components/home/secondary/RecentlyPost'
+import RecentlyPost from '@/components/home/post/RecentlyPost'
+import ElabramPost from '@/components/home/retro/ElabramPost'
+import Footer from '@/components/home/footer/footer'
 
 export default function Home() {
   return (
     <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen">
+      <MainVektorBG />
       <div
         id="layout"
         className="px-20"
@@ -19,29 +22,27 @@ export default function Home() {
         <div>
           <Navbar />
         </div>
-        <MainVektorBG />
         <MainDisplay />
+        {/* secondary layout */}
+        <div id='secondary_layout' className='px-20'>
         <div id="secondary_section">
-          <div className=" text-rowdies text-blueDisable font-bold text-48 flex  justify-center mt-100 ">
+          <div className=" font-rowdies text-blueDisable font-bold text-48 flex  justify-center mt-100 ">
             Recently Post
           </div>
           <div>
             <RecentlyPost />
           </div>
         </div>
-
-        {/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <div>section main</div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <div className="bg-white">
-          <i className="i-tabler-brand-github "></i>
-          <i className="i-tabler-brand-linkedin "></i>
-          <i className="i-tabler-brand-twitter-filled "></i>
-          <i className="i-tabler-mail "></i>
-          <i className="i-tabler-file-cv "></i>
+        <div id="third_section">
+          <div className="font-rowdies text-blueDisable font-bold text-48 flex   mt-100 ">Retro</div>
+          <div><ElabramPost /></div>
         </div>
-      </footer> */}
+        </div>
+
+       
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+          <Footer/>
+      </footer>
       </div>
     </div>
   )
