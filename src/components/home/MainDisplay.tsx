@@ -4,8 +4,8 @@ import SecondarySectionRight from './SecondarySectionRight'
 
 const MainDisplay = () => {
   return (
-    <div className="relative drop-shadow-md flex bg-blueDisable text-white h-100 rounded-50">
-      <div className=" w-1/2 flex flex-col justify-center items-center">
+    <div className="relative flex justify-center drop-shadow-md  bg-blueDisable text-white h-100 rounded-50">
+      <div className=" w-1/2 hidden md:flex flex-col justify-center items-center">
         <div className="h-1/2 flex flex-col justify-center items-center break-all max-w-xs font-bold text-base">{`I’m a front-end developer crafting modern web applications using React cycle, with a strong focus on clean code and intuitive UI/UX.`}</div>
         <div className="h-1/2 flex flex-col justify-center items-end">
           <Image
@@ -17,7 +17,7 @@ const MainDisplay = () => {
           ></Image>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className=" md:w-1/2">
         <div className="h-1/2">
           <SectionRight />
         </div>

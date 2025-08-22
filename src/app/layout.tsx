@@ -23,6 +23,9 @@ const robotoSlab = Roboto_Slab({
 export const metadata: Metadata = {
   title: 'Hijri Hadi',
   description: 'An online blog and portofolio By hadi',
+   icons: {
+    icon: '/asset/logoHadi.png',
+  },
 }
 
 export default function RootLayout({

@@ -19,7 +19,7 @@ const RecentlyPost = () => {
           </div>
           <div className="p-6 flex flex-col">
             <div>
-              <Text size="1">June 20, 2025 </Text>
+              <Text size="1" className='font-medium text-white'>June 20, 2025 </Text>
               <a
                 href="#"
                 className="mt-1 block text-lg leading-tight font-medium text-white"
@@ -28,10 +28,10 @@ const RecentlyPost = () => {
               </a>
             </div>
             <div
-              className="grow"
+              className="hidden md:flex flex-col grow"
               // className={` grow ${isHovered ? 'block' : 'absolute'}`}
             >
-              <p className="mt-2 text-sm text-white  ">
+              <p className="mt-2  text-sm text-white  ">
                 After completing the bootcamp I attended, I have always placed the technology stack I first learned in a
                 special place. Although I have worked with various stacks depending on the demands of my projects, I
                 often find myself returning to my primary stack, which consists of the following technologies

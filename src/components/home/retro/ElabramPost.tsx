@@ -10,13 +10,13 @@ const ElabramPost = () => {
         <div className="grow font-extrabold">Elabram Indonesia</div>
       </div>
       {/* PICTURE IMAGE */}
-      <div className="flex flex-row justify-evenly ">
+      <div className="   mx-auto grid  grid-cols-1   lg:grid-cols-3 gap-4 ">
         <div>
-          <div className=" mx-auto overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
+          <div className=" mx-auto max-w-48  overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <Image
-                  className="h-48 w-full  max-h-48 min-h-48 object-cover rounded-2xl md:h-full md:w-48"
+                  className="h-48 w-full  max-h-48 max-w-48 min-h-48 object-cover rounded-2xl md:h-full md:w-44"
                   src="/asset/post/Elabram_1.jpg"
                   alt="HADIHADI"
                   width={250}
@@ -27,11 +27,11 @@ const ElabramPost = () => {
           </div>
         </div>
         <div>
-          <div className=" mx-auto overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
+          <div className=" mx-auto max-w-48  overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <Image
-                  className="h-48 w-full   max-h-48 min-h-48 object-cover rounded-2xl md:h-full md:w-48"
+                  className="h-48 w-full   max-h-48 max-w-48 min-h-48 object-cover rounded-2xl md:h-full md:w-44"
                   src="/asset/post/Elabram_2.jpg"
                   alt="HADIHADI"
                   width={250}
@@ -42,11 +42,11 @@ const ElabramPost = () => {
           </div>
         </div>
         <div>
-          <div className=" mx-auto overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
+          <div className=" mx-auto max-w-48  overflow-hidden rounded-2xl p-2 bg-gradient-to-br from-[#2D3E50] via-[#37475E] to-[#1E293B]  shadow-md cursor-pointer">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <Image
-                  className="h-48 w-full max-h-48 min-h-48 object-cover rounded-2xl md:h-full md:w-48"
+                  className="h-48 w-full max-h-48 max-w-48 min-h-48 object-cover rounded-2xl md:h-full md:w-44"
                   src="/asset/post/Elabram_3.jpg"
                   alt="HADIHADI"
                   width={250}
@@ -59,7 +59,7 @@ const ElabramPost = () => {
       </div>
 
       {/* TEXT */}
-      <div className="break-all text-base font-medium mt-10 text-white">{`During my time at a highly supportive and professional IT company, I had the privilege of working in an environment that valued both personal growth and collective excellence. The culture encouraged collaboration, and  innovation. allowing me to refine my skills while contributing meaningfully to impactful projects. This chapter of my journey will always hold a special place in my memory, not only for the experiences gained but also for the people who made the journey truly remarkable.`}</div>
+      <div className="hidden md:flex break-all text-base font-medium mt-10 text-white">{`During my time at a highly supportive and professional IT company, I had the privilege of working in an environment that valued both personal growth and collective excellence. The culture encouraged collaboration, and  innovation. allowing me to refine my skills while contributing meaningfully to impactful projects. This chapter of my journey will always hold a special place in my memory, not only for the experiences gained but also for the people who made the journey truly remarkable.`}</div>
     </div>
   )
 }
