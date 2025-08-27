@@ -16,8 +16,8 @@ const MainVektorBG = () => {
              <Image
                src="/asset/vektor/right-vektor-main.svg"
                alt="vektor_right"
-               width={250}
-               height={250}
+               width={200}
+               height={200}
              ></Image>
            </div>
          </div>
