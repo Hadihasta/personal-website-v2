@@ -11,6 +11,8 @@
   "dependencies": {
     "@iconify-json/tabler": "^1.2.22",
     "@radix-ui/themes": "^3.2.1",
+    "gsap": "^3.13.0",
+    "motion": "^12.23.12",
     "next": "15.4.7",
     "react": "19.1.0",
     "react-dom": "19.1.0"
