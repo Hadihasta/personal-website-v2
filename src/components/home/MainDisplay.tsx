@@ -3,7 +3,7 @@ import SectionRight from './SectionRight'
 import Image from 'next/image'
 import SecondarySectionRight from './SecondarySectionRight'
 import { motion } from 'motion/react'
-import Typhography from './typhography/Typhography'
+// import Typhography from './typhography/Typhography'
 
 const MainDisplay = () => {
   return (
@@ -30,7 +30,7 @@ const MainDisplay = () => {
         </div>
       </motion.div>
     </div>
-    <Typhography/>
+    {/* <Typhography/> */}
     </>
   )
 }

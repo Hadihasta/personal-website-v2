@@ -4,6 +4,7 @@ import MainDisplay from '@/components/home/MainDisplay'
 import RecentlyPost from '@/components/home/post/RecentlyPost'
 import ElabramPost from '@/components/home/retro/ElabramPost'
 import FooterLayout from '@/components/home/footer/FooterLayout'
+import DisplayContent from '@/components/home/content/DisplayContent'
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
           <Navbar />
         </div>
         <MainDisplay />
+        {/* <DisplayContent /> */}
+        
         {/* secondary layout */}
         <div
           id="secondary_layout"
