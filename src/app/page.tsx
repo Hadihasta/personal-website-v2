@@ -5,6 +5,7 @@ import RecentlyPost from '@/components/home/post/RecentlyPost'
 import ElabramPost from '@/components/home/retro/ElabramPost'
 import FooterLayout from '@/components/home/footer/FooterLayout'
 import DisplayContent from '@/components/home/content/DisplayContent'
+import DisplaySlide from '@/components/home/content/DisplaySlide'
 
 export default function Home() {
   return (
@@ -23,8 +24,9 @@ export default function Home() {
         <div>
           <Navbar />
         </div>
-        <MainDisplay />
+        {/* <MainDisplay /> */}
         {/* <DisplayContent /> */}
+        <DisplaySlide />
         
         {/* secondary layout */}
         <div

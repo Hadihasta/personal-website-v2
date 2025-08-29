@@ -6,22 +6,23 @@ import { Observer } from 'gsap/Observer'
 import { TextPlugin } from 'gsap/TextPlugin'
 
 gsap.registerPlugin(TextPlugin, Observer)
-
-const DisplayContent = () => {
+const DisplaySlide = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!containerRef.current) return
 
-    const sections = gsap.utils.toArray<HTMLElement>('.slide')//
-    const images = gsap.utils.toArray<HTMLElement>('.image').reverse()//
-    const slideImages = gsap.utils.toArray<HTMLElement>('.slide__img')//
-    const outerWrappers = gsap.utils.toArray<HTMLElement>('.slide__outer')//
-    const innerWrappers = gsap.utils.toArray<HTMLElement>('.slide__inner')//
+    const sections = gsap.utils.toArray<HTMLElement>('.slide')
+    const images = gsap.utils.toArray<HTMLElement>('.image').reverse()
+    const slideImages = gsap.utils.toArray<HTMLElement>('.slide__img')
     const count = document.querySelector('.count')
-    const wrap = gsap.utils.wrap(0, sections.length)//
-    let animating = false//
-    let currentIndex = 0//
+    const outerWrappers = gsap.utils.toArray<HTMLElement>('.slide__outer')
+    const innerWrappers = gsap.utils.toArray<HTMLElement>('.slide__inner')
+    const wrap = gsap.utils.wrap(0, sections.length)
+    let animating = false
+    let currentIndex = 0
+
+    // console.log(slideImages , " << here")
 
     // set inner dan outer dikanan ( x = 100) dikiri (x = -100)
     gsap.set(outerWrappers, { xPercent: 100 })
@@ -30,9 +31,14 @@ const DisplayContent = () => {
     gsap.set('.slide:nth-of-type(1) .slide__outer', { xPercent: 0 })
     gsap.set('.slide:nth-of-type(1) .slide__inner', { xPercent: 0 })
 
+    // run index ke 0 pertama kali
+    gotoSection(0, 0)
+
     function gotoSection(index: number, direction: number): void {
       animating = true
       index = wrap(index)
+
+    //   console.log(index, '-----', direction)
 
       const tl = gsap.timeline({
         defaults: { duration: 1, ease: 'expo.inOut' },
@@ -46,6 +52,7 @@ const DisplayContent = () => {
       const nextSection = sections[index]
       const nextHeading = nextSection.querySelector('.slide__heading')
 
+    //   kalo ada heading dan next heading terdiri dari slide__heading 
       if (heading instanceof HTMLElement && nextHeading instanceof HTMLElement) {
         gsap.set([sections, images], { zIndex: 0, autoAlpha: 0 })
         gsap.set([sections[currentIndex], images[index]], { zIndex: 1, autoAlpha: 1 })
@@ -99,8 +106,9 @@ const DisplayContent = () => {
       }
 
       currentIndex = index
+      console.log(currentIndex , " <<< ")
     }
-    //  scroll mouse up and down
+
     Observer.create({
       target: containerRef.current,
       type: 'wheel,touch,pointer',
@@ -109,10 +117,12 @@ const DisplayContent = () => {
       onUp: () => {
         if (animating) return
         gotoSection(currentIndex + 1, 1)
+        // console.log('up')
       },
       onDown: () => {
         if (animating) return
         gotoSection(currentIndex - 1, -1)
+        // console.log('down')
       },
       tolerance: 10,
     })
@@ -130,66 +140,88 @@ const DisplayContent = () => {
     document.addEventListener('keydown', logKey)
     return () => document.removeEventListener('keydown', logKey)
   }, [])
-
   return (
-    <div
-      ref={containerRef}
-      className="relative overflow-hidden"
-    >
-      {/* Slide 1 */}
-      <div className="slide relative flex justify-center drop-shadow-md bg-blueDisable text-white h-screen rounded-[50px]">
-        <div className="slide__outer flex">
-          <div className="slide__inner flex">
+    <>
+      <div
+        className="flex bg-blueDisable h-10"
+        ref={containerRef}
+      ></div>
+      <div className="slide bg-amber-50 p-20">
+        <div className="slide__outer bg-blue-300 p-20" >
+          <div className="slide__inner p-20 bg-red-700">
+            <Image
+              width={200}
+              height={200}
+              alt="Hadi"
+              className="slide__img"
+              src="/asset/content/hadi_sea.jpg"
+            />
             <h2 className="slide__heading text-3xl font-bold mb-4">Slide One</h2>
+            <p className="overlay__count">
+              0<span className="count">1</span>
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Slide 2 */}
-      <div className="slide relative flex justify-center drop-shadow-md bg-yellowTemp text-white h-screen rounded-[50px]">
+      <div className="slide bg-amber-800 p-20">
         <div className="slide__outer">
           <div className="slide__inner">
+            <Image
+              width={200}
+              height={200}
+              alt="Hadi"
+              className="slide__img"
+              src="/asset/content/hadi_airport.jpg"
+            />
             <h2 className="slide__heading text-3xl font-bold mb-4">Slide Two</h2>
           </div>
         </div>
       </div>
-
-      {/* Slide 3 */}
-      <div className="slide relative flex justify-center drop-shadow-md bg-greenTemplate text-white h-screen rounded-[50px]">
+      <div className="slide bg-red-700 p-20">
         <div className="slide__outer">
           <div className="slide__inner">
-            <h2 className="slide__heading text-3xl font-bold mb-4">Slide Three</h2>
+            <Image
+              width={200}
+              height={200}
+              alt="Hadi"
+              className="slide__img"
+              src="/asset/content/hadi.jpg"
+            />
+            <h2 className="slide__heading text-3xl font-bold mb-4">Slide There</h2>
           </div>
         </div>
       </div>
 
-      {/* Counter + Background Images */}
-      <p className="overlay__count absolute bottom-4 right-4 text-white text-xl">
-        0<span className="count">1</span>
-      </p>
-      <Image
-        width={50}
-        height={50}
-        alt="Hadi"
-        className="image absolute inset-0   -z-10"
-        src="/asset/content/hadi_sea.jpg"
-      />
-      <Image
-        width={50}
-        height={50}
-        alt="Hadi"
-        className="image absolute inset-0   -z-20"
-        src="/asset/content/hadi_airport.jpg"
-      />
-      <Image
-        width={50}
-        height={50}
-        alt="Hadi"
-        className="image absolute inset-0   -z-30"
-        src="/asset/content/hadi.jpg"
-      />
-    </div>
+      {/* <section class="overlay"> */}
+      <div className="overlay__content">
+        {/* <figure class="overlay__img-cont"> */}
+        <Image
+          width={200}
+          height={200}
+          alt="Hadi"
+          className="image"
+          src="/asset/content/hadi.jpg"
+        />
+        <Image
+          width={200}
+          height={200}
+          alt="Hadi"
+          className="image"
+          src="/asset/content/hadi.jpg"
+        />
+        <Image
+          width={200}
+          height={200}
+          alt="Hadi"
+          className="image"
+          src="/asset/content/hadi.jpg"
+        />
+        {/* <Image className="image" src="/asset/content/hadi.jpg" /> */}
+        {/* </figure> */}
+      </div>
+      {/* </section> */}
+    </>
   )
 }
 
-export default DisplayContent
+export default DisplaySlide
