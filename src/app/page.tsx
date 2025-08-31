@@ -4,6 +4,7 @@ import MainDisplay from '@/components/home/MainDisplay'
 import RecentlyPost from '@/components/home/post/RecentlyPost'
 import ElabramPost from '@/components/home/retro/ElabramPost'
 import FooterLayout from '@/components/home/footer/FooterLayout'
+import SlideContent from '@/components/home/content/SlideContent'
 import DisplayContent from '@/components/home/content/DisplayContent'
 import DisplaySlide from '@/components/home/content/DisplaySlide'
 
@@ -24,9 +25,12 @@ export default function Home() {
         <div>
           <Navbar />
         </div>
-        {/* <MainDisplay /> */}
+        <MainDisplay />
+         </div>
+        <SlideContent/>
+
         {/* <DisplayContent /> */}
-        <DisplaySlide />
+        {/* <DisplaySlide /> */}
         
         {/* secondary layout */}
         <div
@@ -53,7 +57,7 @@ export default function Home() {
         <footer className="mt-50">
           <FooterLayout />
         </footer>
-      </div>
+     
     </div>
   )
 }
