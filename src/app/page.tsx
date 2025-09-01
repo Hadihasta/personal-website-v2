@@ -5,8 +5,7 @@ import RecentlyPost from '@/components/home/post/RecentlyPost'
 import ElabramPost from '@/components/home/retro/ElabramPost'
 import FooterLayout from '@/components/home/footer/FooterLayout'
 import SlideContent from '@/components/home/content/SlideContent'
-import DisplayContent from '@/components/home/content/DisplayContent'
-import DisplaySlide from '@/components/home/content/DisplaySlide'
+
 
 export default function Home() {
   return (
@@ -27,10 +26,12 @@ export default function Home() {
         </div>
         <MainDisplay />
          </div>
+         <div className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 ">
+          About Me
+            </div>
         <SlideContent/>
 
-        {/* <DisplayContent /> */}
-        {/* <DisplaySlide /> */}
+  
         
         {/* secondary layout */}
         <div
