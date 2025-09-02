@@ -6,7 +6,6 @@ import ElabramPost from '@/components/home/retro/ElabramPost'
 import FooterLayout from '@/components/home/footer/FooterLayout'
 import SlideContent from '@/components/home/content/SlideContent'
 
-
 export default function Home() {
   return (
     <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default">
@@ -19,20 +18,22 @@ export default function Home() {
           id="logo-main"
           className="flex"
         >
-          <div className="text-lg text-white font-staat md:text-36  cursor-pointer ">HADI</div>
+          <div className="text-2xl text-white font-staat md:text-36  cursor-pointer ">HADI</div>
         </div>
         <div>
           <Navbar />
         </div>
         <MainDisplay />
-         </div>
-         <div className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 ">
-          About Me
-            </div>
-        <SlideContent/>
+      </div>
+      <div id='about_me' className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 ">
+      Spotlight
+      </div>
+      <SlideContent />
 
-  
-        
+      <div
+        id="body_layout"
+        className="px-5 md:px-20"
+      >
         {/* secondary layout */}
         <div
           id="secondary_layout"
@@ -58,7 +59,7 @@ export default function Home() {
         <footer className="mt-50">
           <FooterLayout />
         </footer>
-     
+      </div>
     </div>
   )
 }
