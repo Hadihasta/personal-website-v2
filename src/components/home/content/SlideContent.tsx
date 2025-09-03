@@ -189,12 +189,12 @@ const SlideContent = () => {
           <div>
             {/* min-h-48  shrink-0 */}
             <Image
-              src="/asset/content/Crop_2022.png"
+              src="/asset/content/2022.jpg"
               alt="Hadi_Slide1_1"
               width={250}
               height={250}
               // min-h-48  absolute
-              className="  absolute mb-10  h-48 w-150 object-cover rounded-2xl"
+              className="absolute mb-10  h-48 w-150 object-cover rounded-2xl"
             />
           </div>
           {/*min-h-48  shrink-0  */}
@@ -205,7 +205,7 @@ const SlideContent = () => {
               width={250}
               height={250}
               //  h-full w-100 min-h-48 absolute
-              className=" relative ml-50 mt-20 h-48 w-150   object-cover rounded-2xl"
+              className="relative ml-50 mt-20 h-48 w-150   object-cover rounded-2xl"
             />
           </div>
         </div>
