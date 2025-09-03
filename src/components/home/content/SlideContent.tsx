@@ -129,12 +129,12 @@ const SlideContent = () => {
       ref={containerRef}
     >
       <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#EFE4D2] to-[#254D70] ">
-        <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-[200px]   h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left text-[200px]"></i>
+        <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+          <i className="i-tabler-chevrons-left "></i>
           <span className="count_first">2</span> <span className="count_second">0</span>{' '}
           <span className="count_third">2</span>
           <span className="count">5</span>
-          <i className="i-tabler-chevrons-right text-[200px]"></i>
+          <i className="i-tabler-chevrons-right "></i>
         </div>
         <div className="flex  flex-row px-5 md:px-20 justify-start ">
           <div>
@@ -145,7 +145,7 @@ const SlideContent = () => {
               width={250}
               height={250}
               // min-h-48  absolute
-              className=" image_zoom absolute  mb-10  h-48 w-150 object-cover rounded-2xl"
+              className=" image_zoom absolute  mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
             />
           </div>
           {/*min-h-48  shrink-0  */}
@@ -154,12 +154,12 @@ const SlideContent = () => {
       {/* slide 2 */}
       <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#7ADAA5] ">
         {' '}
-        <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-[200px]   h-1/3  pt-10 z-[1] ">
-          <i className="i-tabler-chevrons-left text-[200px]"></i>
+<div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+          <i className="i-tabler-chevrons-left "></i>
           <span className="count_first">2</span> <span className="count_second">0</span>{' '}
           <span className="count_third">2</span>
           <span className="count">4</span>
-          <i className="i-tabler-chevrons-right text-[200px]"></i>
+          <i className="i-tabler-chevrons-right "></i>
         </div>
         <div className="flex  flex-row px-5 md:px-20 justify-start ">
           <div>
@@ -170,7 +170,7 @@ const SlideContent = () => {
               width={250}
               height={250}
               // min-h-48  absolute
-              className="  image_zoom absolute mb-10   h-48 w-150 object-cover rounded-2xl"
+              className="  image_zoom absolute mb-10   h-48 w-48 sm:w-150 object-cover rounded-2xl"
             />
           </div>
           {/*min-h-48  shrink-0  */}
@@ -179,11 +179,11 @@ const SlideContent = () => {
       {/* slide 3*/}
       <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#FCECDD] ">
         {' '}
-        <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-[200px]   h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left text-[200px]"></i> <span className="count_first">2</span>{' '}
+<div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+          <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
           <span className="count_second">0</span> <span className="count_third">2</span>
           <span className="count">3</span>
-          <i className="i-tabler-chevrons-right text-[200px]"></i>
+          <i className="i-tabler-chevrons-right "></i>
         </div>
         <div className="flex  flex-row px-5 md:px-20 justify-start ">
           <div>
@@ -194,21 +194,20 @@ const SlideContent = () => {
               width={250}
               height={250}
               // min-h-48  absolute
-              className=" image_zoom absolute mb-10  h-48 w-150 object-cover rounded-2xl"
+              className=" image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
             />
           </div>
           {/*min-h-48  shrink-0  */}
         </div>
       </div>
       {/* slide 4*/}
-      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#FBF5DD] to-[#A6CDC6] ">
+      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#80CBC4] to-[#B4EBE6] ">
         {' '}
-        <div className="flex items-center justify-center font-rowdies text-[#FBF5DD] font-bold text-[200px]   h-1/3  pt-10  z-[1]">
-          <i className="i-tabler-chevrons-left text-[200px]"></i> <span className="count_first">2</span>{' '}
+ <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+          <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
           <span className="count_second">0</span> <span className="count_third">2</span>
           <span className="count">2</span>
-    
-          <i className="i-tabler-chevrons-right text-[200px]"></i>
+          <i className="i-tabler-chevrons-right "></i>
         </div>
         <div className="flex  flex-row px-5 md:px-20 justify-start ">
           <div>
@@ -219,7 +218,7 @@ const SlideContent = () => {
               width={250}
               height={250}
               // min-h-48  absolute
-              className="image_zoom absolute mb-10  h-48 w-150 object-cover rounded-2xl"
+              className="image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
             />
           </div>
           {/*min-h-48  shrink-0  */}
@@ -233,7 +232,7 @@ const SlideContent = () => {
             width={250}
             height={250}
             //  h-full w-100 min-h-48 absolute
-            className="image_slide absolute left-130 h-48 w-150   object-cover rounded-2xl"
+            className="image_slide absolute sm:left-130  h-48 w-48 sm:w-150   object-cover rounded-2xl"
           />
           <Image
             src="/asset/content/airport.jpg"
@@ -241,7 +240,7 @@ const SlideContent = () => {
             width={250}
             height={250}
             //  h-full w-100 min-h-48 absolute
-            className=" image_slide absolute left-130  h-48 w-150   object-cover rounded-2xl"
+            className=" image_slide absolute  sm:left-130   h-48 w-48 sm:w-150  object-cover rounded-2xl"
           />
           <Image
             src="/asset/content/2023.jpg"
@@ -249,7 +248,7 @@ const SlideContent = () => {
             width={250}
             height={250}
             //  h-full w-100 min-h-48 absolute
-            className="image_slide absolute left-130 h-48 w-150   object-cover rounded-2xl"
+            className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
           />
           <div>
             <Image
@@ -258,7 +257,7 @@ const SlideContent = () => {
               width={250}
               height={250}
               //  h-full w-100 min-h-48 absolute
-              className="image_slide absolute left-130  h-48 w-150   object-cover rounded-2xl"
+              className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
             />
           </div>
         </div>
