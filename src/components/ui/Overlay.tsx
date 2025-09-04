@@ -20,7 +20,7 @@ const Overlay = () => {
           onClick={handleClose}
           className="absolute  inset-0 bg-white/70 flex items-center justify-center z-50 cursor-pointer h-110"
         >
-          <div className="bg-black p-6 rounded-xl shadow-lg text-center max-w-sm">
+          <div className="bg-black p-6 rounded-xl shadow-lg text-center max-w-40 md:max-w-sm ">
             <p className="text-white">
               
            Scroll UP and Down for Slide this section
