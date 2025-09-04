@@ -1,4 +1,5 @@
 'use client'
+import Overlay from '@/components/ui/Overlay'
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { Observer } from 'gsap/Observer'
@@ -106,6 +107,7 @@ const SlideContent = () => {
       currentIndex = index
     }
 
+
     Observer.create({
       target: containerRef.current,
       type: 'wheel,touch,pointer',
@@ -124,145 +126,148 @@ const SlideContent = () => {
   }, [])
 
   return (
-    <div
-      className="relative layout h-110 w-full  overflow-hidden"
-      ref={containerRef}
-    >
-      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#EFE4D2] to-[#254D70] ">
-        <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left "></i>
-          <span className="count_first">2</span> <span className="count_second">0</span>{' '}
-          <span className="count_third">2</span>
-          <span className="count">5</span>
-          <i className="i-tabler-chevrons-right "></i>
-        </div>
-        <div className="flex  flex-row px-5 md:px-20 justify-start ">
-          <div>
-            {/* min-h-48  shrink-0 */}
-            <Image
-              src="/asset/content/Elabram2025_2.jpg"
-              alt="Hadi_Slide1_1"
-              width={250}
-              height={250}
-              // min-h-48  absolute
-              className=" image_zoom absolute  mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
-            />
+    <>
+        <div
+          className="relative layout h-110 w-full  overflow-hidden"
+          ref={containerRef}
+          >
+       <Overlay  />
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#EFE4D2] to-[#254D70] ">
+            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+              <i className="i-tabler-chevrons-left "></i>
+              <span className="count_first">2</span> <span className="count_second">0</span>{' '}
+              <span className="count_third">2</span>
+              <span className="count">5</span>
+              <i className="i-tabler-chevrons-right "></i>
+            </div>
+            <div className="flex  flex-row px-5 md:px-20 justify-start ">
+              <div>
+                {/* min-h-48  shrink-0 */}
+                <Image
+                  src="/asset/content/Elabram2025_2.jpg"
+                  alt="Hadi_Slide1_1"
+                  width={250}
+                  height={250}
+                  // min-h-48  absolute
+                  className=" image_zoom absolute  mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                />
+              </div>
+              {/*min-h-48  shrink-0  */}
+            </div>
           </div>
-          {/*min-h-48  shrink-0  */}
-        </div>
-      </div>
-      {/* slide 2 */}
-      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#7ADAA5] ">
-        {' '}
-<div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left "></i>
-          <span className="count_first">2</span> <span className="count_second">0</span>{' '}
-          <span className="count_third">2</span>
-          <span className="count">4</span>
-          <i className="i-tabler-chevrons-right "></i>
-        </div>
-        <div className="flex  flex-row px-5 md:px-20 justify-start ">
-          <div>
-            {/* min-h-48  shrink-0 */}
-            <Image
-              src="/asset/content/airport2.jpg"
-              alt="Hadi_Slide1_1"
-              width={250}
-              height={250}
-              // min-h-48  absolute
-              className="  image_zoom absolute mb-10   h-48 w-48 sm:w-150 object-cover rounded-2xl"
-            />
+          {/* slide 2 */}
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#7ADAA5] ">
+            {' '}
+            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+              <i className="i-tabler-chevrons-left "></i>
+              <span className="count_first">2</span> <span className="count_second">0</span>{' '}
+              <span className="count_third">2</span>
+              <span className="count">4</span>
+              <i className="i-tabler-chevrons-right "></i>
+            </div>
+            <div className="flex  flex-row px-5 md:px-20 justify-start ">
+              <div>
+                {/* min-h-48  shrink-0 */}
+                <Image
+                  src="/asset/content/airport2.jpg"
+                  alt="Hadi_Slide1_1"
+                  width={250}
+                  height={250}
+                  // min-h-48  absolute
+                  className="  image_zoom absolute mb-10   h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                />
+              </div>
+              {/*min-h-48  shrink-0  */}
+            </div>
           </div>
-          {/*min-h-48  shrink-0  */}
-        </div>
-      </div>
-      {/* slide 3*/}
-      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#FCECDD] ">
-        {' '}
-<div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
-          <span className="count_second">0</span> <span className="count_third">2</span>
-          <span className="count">3</span>
-          <i className="i-tabler-chevrons-right "></i>
-        </div>
-        <div className="flex  flex-row px-5 md:px-20 justify-start ">
-          <div>
-            {/* min-h-48  shrink-0 */}
-            <Image
-              src="/asset/content/2023_2.jpg"
-              alt="Hadi_Slide1_1"
-              width={250}
-              height={250}
-              // min-h-48  absolute
-              className=" image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
-            />
+          {/* slide 3*/}
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#FCECDD] ">
+            {' '}
+            <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+              <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
+              <span className="count_second">0</span> <span className="count_third">2</span>
+              <span className="count">3</span>
+              <i className="i-tabler-chevrons-right "></i>
+            </div>
+            <div className="flex  flex-row px-5 md:px-20 justify-start ">
+              <div>
+                {/* min-h-48  shrink-0 */}
+                <Image
+                  src="/asset/content/2023_2.jpg"
+                  alt="Hadi_Slide1_1"
+                  width={250}
+                  height={250}
+                  // min-h-48  absolute
+                  className=" image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                />
+              </div>
+              {/*min-h-48  shrink-0  */}
+            </div>
           </div>
-          {/*min-h-48  shrink-0  */}
-        </div>
-      </div>
-      {/* slide 4*/}
-      <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#80CBC4] to-[#B4EBE6] ">
-        {' '}
- <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
-          <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
-          <span className="count_second">0</span> <span className="count_third">2</span>
-          <span className="count">2</span>
-          <i className="i-tabler-chevrons-right "></i>
-        </div>
-        <div className="flex  flex-row px-5 md:px-20 justify-start ">
-          <div>
-            {/* min-h-48  shrink-0 */}
-            <Image
-              src="/asset/content/2022.jpg"
-              alt="Hadi_Slide1_1"
-              width={250}
-              height={250}
-              // min-h-48  absolute
-              className="image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
-            />
+          {/* slide 4*/}
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#80CBC4] to-[#B4EBE6] ">
+            {' '}
+            <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+              <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
+              <span className="count_second">0</span> <span className="count_third">2</span>
+              <span className="count">2</span>
+              <i className="i-tabler-chevrons-right "></i>
+            </div>
+            <div className="flex  flex-row px-5 md:px-20 justify-start ">
+              <div>
+                {/* min-h-48  shrink-0 */}
+                <Image
+                  src="/asset/content/2022.jpg"
+                  alt="Hadi_Slide1_1"
+                  width={250}
+                  height={250}
+                  // min-h-48  absolute
+                  className="image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                />
+              </div>
+              {/*min-h-48  shrink-0  */}
+            </div>
           </div>
-          {/*min-h-48  shrink-0  */}
-        </div>
-      </div>
-      <div className="flex justify-center items-center h-full ">
-        <div className="flex flex-row ">
-          <Image
-            src="/asset/content/Elabram2025_1.jpg"
-            alt="Hadi_Slide1_2"
-            width={250}
-            height={250}
-            //  h-full w-100 min-h-48 absolute
-            className="image_slide absolute sm:left-130  h-48 w-48 sm:w-150   object-cover rounded-2xl"
-          />
-          <Image
-            src="/asset/content/airport.jpg"
-            alt="Hadi_Slide1_2"
-            width={250}
-            height={250}
-            //  h-full w-100 min-h-48 absolute
-            className=" image_slide absolute  sm:left-130   h-48 w-48 sm:w-150  object-cover rounded-2xl"
-          />
-          <Image
-            src="/asset/content/2023.jpg"
-            alt="Hadi_Slide1_2"
-            width={250}
-            height={250}
-            //  h-full w-100 min-h-48 absolute
-            className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
-          />
-          <div>
-            <Image
-              src="/asset/content/2022_1.jpg"
-              alt="Hadi_Slide1_2"
-              width={250}
-              height={250}
-              //  h-full w-100 min-h-48 absolute
-              className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
-            />
+          <div className="flex justify-center items-center h-full ">
+            <div className="flex flex-row ">
+              <Image
+                src="/asset/content/Elabram2025_1.jpg"
+                alt="Hadi_Slide1_2"
+                width={250}
+                height={250}
+                //  h-full w-100 min-h-48 absolute
+                className="image_slide absolute sm:left-130  h-48 w-48 sm:w-150   object-cover rounded-2xl"
+              />
+              <Image
+                src="/asset/content/airport.jpg"
+                alt="Hadi_Slide1_2"
+                width={250}
+                height={250}
+                //  h-full w-100 min-h-48 absolute
+                className=" image_slide absolute  sm:left-130   h-48 w-48 sm:w-150  object-cover rounded-2xl"
+              />
+              <Image
+                src="/asset/content/2023.jpg"
+                alt="Hadi_Slide1_2"
+                width={250}
+                height={250}
+                //  h-full w-100 min-h-48 absolute
+                className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
+              />
+              <div>
+                <Image
+                  src="/asset/content/2022_1.jpg"
+                  alt="Hadi_Slide1_2"
+                  width={250}
+                  height={250}
+                  //  h-full w-100 min-h-48 absolute
+                  className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+    </>
   )
 }
 
