@@ -5,7 +5,7 @@ const SecondarySectionRight = () => {
     <div className="flex flex-col justify-center items-center h-full">
       <div>
         <a
-          href="resume/HIJRI ISMAIL HADI_CV October.pdf"
+          href="resume/Hijri Ismail Hadi_Web Developer.pdf"
           target="_blank"
         >
           <button className="glass-card p-2 cursor-pointer  ">Download CV</button>
