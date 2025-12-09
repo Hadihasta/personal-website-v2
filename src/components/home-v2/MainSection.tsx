@@ -6,8 +6,8 @@ const MainSection = () => {
     <div>
       <div className="text-group relative flex justify-center drop-shadow-md  text-white h-100  " >
         <div>
-          I’m a front-end developer crafting modern web applications using React cycle, with a strong focus on clean
-          code and intuitive UI/UX.
+         {` I’m a front-end developer crafting modern web applications using React cycle, with a strong focus on clean
+          code and intuitive UI/UX.`}
         </div>
         <div>
             Services
