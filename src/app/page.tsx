@@ -10,6 +10,7 @@ import FooterLayout from '@/components/home/footer/FooterLayout'
 import SlideContent from '@/components/home/content/SlideContent'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import MainSection from '@/components/home-v2/MainSection'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -64,6 +65,7 @@ export default function Home() {
           <Navbar />
         </div>
         <MainDisplay />
+        {/* <MainSection /> */}
       </div>
 
       <div >

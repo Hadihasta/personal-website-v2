@@ -53,12 +53,16 @@ body {
 
 @theme {
   /* color */
-  --color-muteGrey: #2d3e50;
-  --color-blueDark: #1e293b;
+  /* (shadow) */
+  --color-muteGrey: #2d3e50;  
+  /* biru tua */
+  --color-blueDark: #1e293b;  
+ /* biru muda */
   --color-blueDisable: #4e74a7;
-  --color-yellowTemp: #F3CA40;
-  --color-yellowTemp: #F3CA40;
-  --color-greenTemplate: #29BF12;
+/* 
+  --color-muteGrey: #1D3C47;
+  --color-blueDark: #224854;
+  --color-blueDisable: #1e3f4b; */
 
   /* text */
   --text-24: 24px;
