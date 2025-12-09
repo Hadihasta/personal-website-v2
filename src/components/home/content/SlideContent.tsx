@@ -235,7 +235,6 @@ const SlideContent = () => {
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                //  h-full w-100 min-h-48 absolute
                 className="image_slide absolute sm:left-130  h-48 w-48 sm:w-150   object-cover rounded-2xl"
               />
               <Image
@@ -243,7 +242,6 @@ const SlideContent = () => {
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                //  h-full w-100 min-h-48 absolute
                 className=" image_slide absolute  sm:left-130   h-48 w-48 sm:w-150  object-cover rounded-2xl"
               />
               <Image
@@ -251,7 +249,6 @@ const SlideContent = () => {
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                //  h-full w-100 min-h-48 absolute
                 className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
               />
               <div>
@@ -260,7 +257,6 @@ const SlideContent = () => {
                   alt="Hadi_Slide1_2"
                   width={250}
                   height={250}
-                  //  h-full w-100 min-h-48 absolute
                   className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
                 />
               </div>
