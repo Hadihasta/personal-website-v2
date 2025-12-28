@@ -6,14 +6,14 @@ html {
 }
 
 /* Remove browser’s default search icon */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
   display: none;
 }
 
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -46,20 +46,21 @@ input[type="search"] {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-/* html,
+html,
 body {
   font-family: var(--font-robotoslab);
-} */
+  color: white;
+}
 
 @theme {
   /* color */
   /* (shadow) */
-  --color-muteGrey: #2d3e50;  
+  --color-muteGrey: #2d3e50;
   /* biru tua */
-  --color-blueDark: #1e293b;  
- /* biru muda */
+  --color-blueDark: #1e293b;
+  /* biru muda */
   --color-blueDisable: #4e74a7;
-/* 
+  /* 
   --color-muteGrey: #1D3C47;
   --color-blueDark: #224854;
   --color-blueDisable: #1e3f4b; */
@@ -73,6 +74,7 @@ body {
   --radius-50: 50px;
 }
 
+/* glass effect */
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -102,4 +104,17 @@ body {
   width: 1px;
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+}
+
+
+/* flex */
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
 }

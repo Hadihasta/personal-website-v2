@@ -1,6 +1,3 @@
-import { addIconSelectors } from '@iconify/tailwind'
-import tabler from '@iconify-json/tabler/icons.json'
-
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -49,13 +46,7 @@ const config = {
       },
     },
   },
-  plugins: [
-    addIconSelectors({
-      collections: {
-        tabler,
-      },
-    } as object),
-  ],
+  plugins: [],
 }
 
 export default config

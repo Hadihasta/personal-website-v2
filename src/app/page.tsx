@@ -11,6 +11,7 @@ import SlideContent from '@/components/home/content/SlideContent'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import MainSection from '@/components/home-v2/MainSection'
+import FirstSection from '@/components/content/home/FirstSection'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -50,7 +51,7 @@ export default function Home() {
 
   return (
     <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default">
-      <MainVektorBG />
+      {/* <MainVektorBG /> */}
       <div
         id="layout"
         className="fade-in px-5 md:px-20"
@@ -64,8 +65,9 @@ export default function Home() {
         <div>
           <Navbar />
         </div>
-        <MainDisplay />
+        {/* <MainDisplay /> */}
         {/* <MainSection /> */}
+<FirstSection/>
       </div>
 
       <div >
