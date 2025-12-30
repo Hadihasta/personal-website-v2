@@ -60,7 +60,7 @@ export default function Home() {
           id="logo-main"
           className="flex"
         >
-          <div className="text-2xl text-white font-staat md:text-36  cursor-pointer ">HADI</div>
+          {/* <div className="text-2xl text-white font-staat md:text-36  cursor-pointer ">HADI</div> */}
         </div>
         <div>
           <Navbar />

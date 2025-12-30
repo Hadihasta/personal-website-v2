@@ -13,12 +13,14 @@ import {
 const FirstSection = () => {
   return (
     <>
-      <div className={styles.layout}>
+      <div className={`${styles.layout} lg:max-w-[60rem] mx-auto`}>
         <div className="text-4xl">{`I'm Hadi`}</div>
-        <div className="mt-5">{`I work as a front-end developer crafting modern web applications using React cycle, with a strong focus on clean code and intuitive UI/UX.`}</div>
+        <div
+          className={`${styles.paragraf} mt-5`}
+        >{`I work as a front-end developer crafting modern web applications using React cycle, with a strong focus on clean code and intuitive UI/UX.`}</div>
         <div
           id="section button"
-          className={`${styles.relative}flex-row gap-4 mt-10`}
+          className={`flex-row gap-4 mt-10`}
         >
           <button>Project</button>
           <button>More About Me</button>
@@ -33,33 +35,39 @@ const FirstSection = () => {
           <IconBrandLinkedin className="rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20" />
           <IconBrandTwitter className="rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20" />
         </div>
-        {/* <div className=''> */}
 
-        <div className="absolute right-0 icons">
-          <IconBrandUpwork className={`${styles.icons_1} rotate-y-25 rotate-z-30 rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`} />
-          <IconBrandTypescript className={`${styles.icons_2} rotate-y-25 rotate-z-30 rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`} />
-          <IconBrandNextjs className={`${styles.icons_3} rotate-y-25 rotate-z-30 rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`} />
-          <IconBrandTailwind className={`${styles.icons_4} rotate-y-25 rotate-z-30 rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`} />
+        <div className={styles.iconArea}>
+          {/* ICONS */}
+          <div className={styles.icons}>
+            <IconBrandUpwork className={`${styles.icon} ${styles.icon1}`} />
+            <IconBrandTypescript className={`${styles.icon} ${styles.icon2}`} />
+            <IconBrandNextjs className={`${styles.icon} ${styles.icon3}`} />
+            <IconBrandTailwind className={`${styles.icon} ${styles.icon4}`} />
+          </div>
 
-        </div>
-
-        <div className="absolute right-0 ">
+          {/* IMAGE */}
           <Image
             src="../asset-v2/vektor/matrix_left.svg"
-            alt="Matrix_left"
+            alt="Matrix"
             width={100}
             height={100}
-            className={styles.matrix_left}
+            className={`${styles.matrix} absolute`}
           />
           <Image
             src="../asset-v2/vektor/matrix_right.svg"
             alt="Matrix_right"
             width={100}
             height={100}
-            className=" "
+            className={`${styles.matrix} relative bottom-26 left-5`}
+          />
+          <Image
+            src="../asset-v2/vektor/arrow_up.svg"
+            alt="Matrix_left"
+            width={100}
+            height={100}
+            className={styles.matrix_left}
           />
         </div>
-        {/* </div> */}
       </div>
     </>
   )
