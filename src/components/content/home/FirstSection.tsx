@@ -18,12 +18,14 @@ const FirstSection = () => {
   const [cursor, setCursor] = useState({ x: 0, y: 0 })
   const [active, setActive] = useState(false)
 
-  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
-    setCursor({
-      x: e.clientX,
-      y: e.clientY,
-    })
-  }
+ const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+  const rect = e.currentTarget.getBoundingClientRect()
+
+  setCursor({
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top,
+  })
+}
 
   const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer')
