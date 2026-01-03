@@ -125,3 +125,25 @@
     right: -50px;
   }
 }
+
+
+.cursorArrow {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.6) rotate(-20deg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.cursorArrow {
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+.hideCursor {
+  cursor: none;
+}

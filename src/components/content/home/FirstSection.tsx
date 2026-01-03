@@ -1,3 +1,6 @@
+'use client'
+import { useState } from 'react'
+import type { MouseEvent } from 'react'
 import styles from './FirstSection.module.css'
 import Image from 'next/image'
 import {
@@ -9,8 +12,23 @@ import {
   IconBrandLinkedin,
   IconFile,
   IconBrandTwitter,
+  IconArrowUpRight,
 } from '@tabler/icons-react'
 const FirstSection = () => {
+  const [cursor, setCursor] = useState({ x: 0, y: 0 })
+  const [active, setActive] = useState(false)
+
+  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+    setCursor({
+      x: e.clientX,
+      y: e.clientY,
+    })
+  }
+
+  const openLink = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <>
       <div className={`${styles.layout} lg:max-w-[60rem] mx-auto`}>
@@ -28,16 +46,43 @@ const FirstSection = () => {
 
         <div
           id="sosial-media"
-          className="mt-10 flex-row gap-2"
+          onMouseMove={handleMove}
+          onMouseEnter={() => setActive(true)}
+          onMouseLeave={() => setActive(false)}
+          className={`mt-10 flex w-fit gap-2 relative ${styles.hideCursor}`}
         >
-          <IconBrandGithub className="rounded-full  cursor-pointer size-10 p-2 ring-1 ring-blueDark dark:bg-blueDark dark:ring-white/20" />
-          <IconFile className="rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20" />
-          <IconBrandLinkedin className="rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20" />
-          <IconBrandTwitter className="rounded-full cursor-pointer size-10 p-2 ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20" />
+          {/* Custom Cursor */}
+          <IconArrowUpRight
+            className={`${styles.cursorArrow} ${active ? styles.show : ''}`}
+            style={{
+              left: cursor.x,
+              top: cursor.y,
+            }}
+          />
+
+          <IconBrandGithub
+            onClick={() => openLink('https://github.com/Hadihasta')}
+            className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
+          />
+
+          <a href="resume/HIJRI ISMAIL HADI_CV Des.pdf">
+            <IconFile
+              className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
+            />
+          </a>
+
+          <IconBrandLinkedin
+            onClick={() => openLink('https://www.linkedin.com/in/hijri-hadi-22289b23a/')}
+            className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
+          />
+
+          <IconBrandTwitter
+            onClick={() => openLink('https://x.com/hadiasta_')}
+            className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
+          />
         </div>
 
         <div className={styles.iconArea}>
-          {/* ICONS */}
           <div className={styles.icons}>
             <IconBrandUpwork className={`${styles.icon} ${styles.icon1}`} />
             <IconBrandTypescript className={`${styles.icon} ${styles.icon2}`} />
@@ -45,8 +90,6 @@ const FirstSection = () => {
             <IconBrandTailwind className={`${styles.icon} ${styles.icon4}`} />
           </div>
 
-     
-     
           {/* IMAGE */}
           <Image
             src="../asset-v2/vektor/matrix_left.svg"
@@ -69,8 +112,6 @@ const FirstSection = () => {
             height={100}
             className={`${styles.matrix_left} infinite-bounce`}
           />
-        
-  
         </div>
       </div>
     </>
