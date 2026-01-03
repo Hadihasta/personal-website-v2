@@ -1,3 +1,4 @@
+import Navbar from '@/components/global/Navbar'
 import type { Metadata } from 'next'
 import { Rowdies, Roboto_Slab, Staatliches } from 'next/font/google'
 import '@/style/globals.css'
@@ -36,8 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${rowdies.variable}  ${staatliches.variable} ${robotoSlab.variable} antialiased `}
+        className={` ${rowdies.variable}  ${staatliches.variable} ${robotoSlab.variable} antialiased bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default `}
       >
+      <Navbar />
         {children}
       </body>
     </html>
