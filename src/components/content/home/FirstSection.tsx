@@ -22,8 +22,8 @@ const FirstSection = () => {
           id="section button"
           className={`flex-row gap-4 mt-10`}
         >
-          <button>Project</button>
-          <button>More About Me</button>
+          <button className={`${styles.buttonBorder}`}>Project</button>
+          <button className={`${styles.buttonBorder}`}>More About Me</button>
         </div>
 
         <div

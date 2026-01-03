@@ -35,7 +35,9 @@ body {
   --color-blueDark: #1e293b;
   /* biru muda */
   --color-blueDisable: #4e74a7;
-  /* 
+  /* // stroke dan line jpg */
+  --color-blueLine : #9EAEC8;
+
 
   /* text */
   --text-24: 24px;
