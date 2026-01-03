@@ -65,7 +65,7 @@ const FirstSection = () => {
             alt="Matrix_left"
             width={100}
             height={100}
-            className={styles.matrix_left}
+            className={`${styles.matrix_left} infinite-bounce`}
           />
         </div>
       </div>

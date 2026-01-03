@@ -13,7 +13,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import MainSection from '@/components/home-v2/MainSection'
 import FirstSection from '@/components/content/home/FirstSection'
 
-
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -48,7 +47,6 @@ export default function Home() {
     })
   }, [])
 
-
   return (
     <div className=" bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default">
       {/* <MainVektorBG /> */}
@@ -67,14 +65,7 @@ export default function Home() {
         </div>
         {/* <MainDisplay /> */}
         {/* <MainSection /> */}
-<FirstSection/>
-      </div>
-
-      <div >
-      <div  id='about_me' className="  flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 ">
-      Spotlight
-      </div>
-      <SlideContent />
+        <FirstSection />
       </div>
 
       <div
@@ -86,7 +77,10 @@ export default function Home() {
           id="secondary_layout"
           className=" px-5  md:px-20  "
         >
-          <div id="secondary_section" className='wait-scroll-in'>
+          <div
+            id="secondary_section"
+            className="wait-scroll-in"
+          >
             <div className="text-center md:text-left! font-rowdies text-blueDisable font-bold text-48 flex   mt-100 ">
               Recently Post
             </div>
@@ -94,7 +88,21 @@ export default function Home() {
               <RecentlyPost />
             </div>
           </div>
-          <div id="third_section" className='wait-second-in '>
+
+          <div>
+            <div
+              id="about_me"
+              className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 "
+            >
+              Spotlight
+            </div>
+            <SlideContent />
+          </div>
+
+          <div
+            id="third_section"
+            className="wait-second-in "
+          >
             <div className="font-rowdies text-blueDisable font-bold text-48 flex   mt-100 ">Retro</div>
             <div>
               <ElabramPost />

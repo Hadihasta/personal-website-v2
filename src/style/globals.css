@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@config "../../tailwind.config.ts";
+
 
 html {
   scroll-behavior: smooth;
@@ -46,6 +46,18 @@ body {
 
   /* Border radius */
   --radius-50: 50px;
+
+}
+
+
+.font-staat {
+  font-family: var(--font-staatliches);
+}
+.font-rowdies {
+  font-family: var(--font-rowdies);
+}
+.font-robotoSlab {
+  font-family: var(--font-roboto-slab);
 }
 
 /* glass effect */
@@ -91,4 +103,21 @@ body {
 .flex-col{
   display: flex;
   flex-direction: column;
+}
+
+
+.infinite-bounce{
+  animation: bounce-diagonal 2s infinite;
+}
+
+@keyframes bounce-diagonal {
+  0%, 100% {
+    transform: translate(-30%, -30%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translate(0, 0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }

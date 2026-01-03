@@ -128,11 +128,11 @@ const SlideContent = () => {
   return (
     <>
         <div
-          className="relative layout h-110 w-full  overflow-hidden"
+          className="relative layout h-110 w-full  overflow-hidden rounded-2xl mt-5"
           ref={containerRef}
           >
        <Overlay  />
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#EFE4D2] to-[#254D70] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i>
               <span className="count_first">2</span> <span className="count_second">0</span>{' '}
@@ -156,7 +156,7 @@ const SlideContent = () => {
             </div>
           </div>
           {/* slide 2 */}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#7ADAA5] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
             <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i>
@@ -181,7 +181,7 @@ const SlideContent = () => {
             </div>
           </div>
           {/* slide 3*/}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#FCECDD] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
             <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
@@ -205,7 +205,7 @@ const SlideContent = () => {
             </div>
           </div>
           {/* slide 4*/}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#80CBC4] to-[#B4EBE6] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
             <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
