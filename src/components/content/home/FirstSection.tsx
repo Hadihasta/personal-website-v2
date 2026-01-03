@@ -22,7 +22,7 @@ const FirstSection = () => {
           id="section button"
           className={`flex-row gap-4 mt-10`}
         >
-          <button className={`${styles.buttonBorder}`}>Project</button>
+          {/* <button className={`${styles.buttonBorder}`}>Project</button> */}
           <button className={`${styles.buttonBorder}`}>More About Me</button>
         </div>
 
@@ -45,6 +45,8 @@ const FirstSection = () => {
             <IconBrandTailwind className={`${styles.icon} ${styles.icon4}`} />
           </div>
 
+     
+     
           {/* IMAGE */}
           <Image
             src="../asset-v2/vektor/matrix_left.svg"
@@ -58,7 +60,7 @@ const FirstSection = () => {
             alt="Matrix_right"
             width={100}
             height={100}
-            className={`${styles.matrix} relative bottom-26 left-5`}
+            className={`${styles.matrix} relative bottom-26 left-5 `}
           />
           <Image
             src="../asset-v2/vektor/arrow_up.svg"
@@ -67,6 +69,8 @@ const FirstSection = () => {
             height={100}
             className={`${styles.matrix_left} infinite-bounce`}
           />
+        
+  
         </div>
       </div>
     </>

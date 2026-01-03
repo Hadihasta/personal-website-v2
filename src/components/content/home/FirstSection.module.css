@@ -10,13 +10,11 @@
   max-width: 30rem;
 }
 
-.matrix_left{
-    top: 130px;
-    position: absolute;
-    right: -90px;
+.matrix_left {
+  top: 150px;
+  position: absolute;
+  right: -50px;
 }
-
-
 
 .iconArea {
   position: absolute;
@@ -87,10 +85,43 @@
   transform: scale(1.15) !important;
 }
 
-.buttonBorder{
+.buttonBorder {
   /* width style color */
-  border: 2px solid #9EAEC8;
+  border: 2px solid #9eaec8;
   border-radius: 12px;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .iconArea:hover .icon1 {
+    transform: translate(-50%, -180px) scale(2);
+  }
+
+  .iconArea:hover .icon2 {
+    transform: translate(130px, -50%) scale(2);
+  }
+
+  .iconArea:hover .icon3 {
+    transform: translate(-170px, -50%) scale(2);
+  }
+
+  .iconArea:hover .icon4 {
+    transform: translate(-50%, 150px) scale(2);
+  }
+
+  .iconArea {
+    --spread: 300px;
+    --icon-scale: 2;
+  }
+
+  .matrix {
+    transform: scale(2);
+  }
+
+  .matrix_left {
+    top: 350px;
+    position: absolute;
+    right: -50px;
+  }
 }
