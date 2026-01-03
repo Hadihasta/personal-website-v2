@@ -24,8 +24,8 @@ const SlideContent = () => {
     let animating = false
 
     // Atur posisi awal: hanya slide pertama yang tampil
-    gsap.set(sections, { xPercent: 100 })
-    gsap.set(image, { xPercent: 100 })
+    gsap.set(sections, { xPercent: 300 })
+    gsap.set(image, { xPercent: 300 })
 
     gsap.fromTo(
       sections[0],
@@ -128,12 +128,12 @@ const SlideContent = () => {
   return (
     <>
         <div
-          className="relative layout h-110 w-full  overflow-hidden"
+          className="relative layout h-110 w-full  overflow-hidden rounded-2xl mt-5"
           ref={containerRef}
           >
        <Overlay  />
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#EFE4D2] to-[#254D70] ">
-            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
+            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl xl:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i>
               <span className="count_first">2</span> <span className="count_second">0</span>{' '}
               <span className="count_third">2</span>
@@ -149,16 +149,16 @@ const SlideContent = () => {
                   width={250}
                   height={250}
                   // min-h-48  absolute
-                  className=" image_zoom absolute  mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                  className=" image_zoom absolute  mb-10  h-48 w-48 xl:w-150 object-cover rounded-2xl"
                 />
               </div>
               {/*min-h-48  shrink-0  */}
             </div>
           </div>
           {/* slide 2 */}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#7ADAA5] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
-            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+            <div className="flex items-center justify-center font-rowdies text-[#EFE4D2] font-bold text-8xl xl:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i>
               <span className="count_first">2</span> <span className="count_second">0</span>{' '}
               <span className="count_third">2</span>
@@ -174,16 +174,16 @@ const SlideContent = () => {
                   width={250}
                   height={250}
                   // min-h-48  absolute
-                  className="  image_zoom absolute mb-10   h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                  className="  image_zoom absolute mb-10   h-48 w-48 xl:w-150 object-cover rounded-2xl"
                 />
               </div>
               {/*min-h-48  shrink-0  */}
             </div>
           </div>
           {/* slide 3*/}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#239BA7] to-[#FCECDD] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
-            <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+            <div className="flex items-center justify-center font-rowdies text-[#239BA7] font-bold text-8xl xl:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
               <span className="count_second">0</span> <span className="count_third">2</span>
               <span className="count">3</span>
@@ -198,16 +198,16 @@ const SlideContent = () => {
                   width={250}
                   height={250}
                   // min-h-48  absolute
-                  className=" image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                  className=" image_zoom absolute mb-10  h-48 w-48 xl:w-150 object-cover rounded-2xl"
                 />
               </div>
               {/*min-h-48  shrink-0  */}
             </div>
           </div>
           {/* slide 4*/}
-          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-[#80CBC4] to-[#B4EBE6] ">
+          <div className="slide absolute inset-0 flex   flex-col bg-linear-to-t from-muteGrey to-blueDark ">
             {' '}
-            <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl sm:text-[200px] h-1/3  pt-10 z-[1]">
+            <div className="flex items-center justify-center font-rowdies text-[#80CBC4] font-bold text-8xl xl:text-[200px] h-1/3  pt-10 z-[1]">
               <i className="i-tabler-chevrons-left "></i> <span className="count_first">2</span>{' '}
               <span className="count_second">0</span> <span className="count_third">2</span>
               <span className="count">2</span>
@@ -222,7 +222,7 @@ const SlideContent = () => {
                   width={250}
                   height={250}
                   // min-h-48  absolute
-                  className="image_zoom absolute mb-10  h-48 w-48 sm:w-150 object-cover rounded-2xl"
+                  className="image_zoom absolute mb-10  h-48 w-48 xl:w-150 object-cover rounded-2xl"
                 />
               </div>
               {/*min-h-48  shrink-0  */}
@@ -235,21 +235,21 @@ const SlideContent = () => {
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                className="image_slide absolute sm:left-130  h-48 w-48 sm:w-150   object-cover rounded-2xl"
+                className="image_slide absolute xl:left-130  h-48 w-48 xl:w-150   object-cover rounded-2xl"
               />
               <Image
                 src="/asset/content/airport.jpg"
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                className=" image_slide absolute  sm:left-130   h-48 w-48 sm:w-150  object-cover rounded-2xl"
+                className=" image_slide absolute  xl:left-130   h-48 w-48 xl:w-150  object-cover rounded-2xl"
               />
               <Image
                 src="/asset/content/2023.jpg"
                 alt="Hadi_Slide1_2"
                 width={250}
                 height={250}
-                className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
+                className="image_slide absolute  xl:left-130  h-48 w-48 xl:w-150  object-cover rounded-2xl"
               />
               <div>
                 <Image
@@ -257,7 +257,7 @@ const SlideContent = () => {
                   alt="Hadi_Slide1_2"
                   width={250}
                   height={250}
-                  className="image_slide absolute  sm:left-130  h-48 w-48 sm:w-150  object-cover rounded-2xl"
+                  className="image_slide absolute  xl:left-130  h-48 w-48 xl:w-150  object-cover rounded-2xl"
                 />
               </div>
             </div>
