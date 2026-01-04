@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 
 const Navbar = () => {
@@ -47,10 +46,10 @@ const Navbar = () => {
         </div>
 
          <div
-          onClick={() => handleNavigate('/goals')}
-          className={navItemClass('/goals')}
+          onClick={() => handleNavigate('/sight')}
+          className={navItemClass('/sight')}
         >
-          GOALS
+          Sight
         </div>
 
 
