@@ -72,7 +72,7 @@ const FirstSection = () => {
 
        
             <IconFile
-             onClick={() => openLink('https://drive.google.com/file/d/1KH4xUg-3jNXbqFm5BVH8LZCWLDhQ7me9/view?usp=sharing')}
+             onClick={() => openLink('https://drive.google.com/file/d/1rS6glMtSLCMZppNdS3FdWZ2pN4dpxZrc/view?usp=sharing')}
            className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
             />
         
