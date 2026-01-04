@@ -4,6 +4,7 @@
 import type { Project } from '@/app/projects/data'
 import ProjectCard from './ProjectCard'
 
+
 export default function ProjectGrid({
   projects,
 }: {

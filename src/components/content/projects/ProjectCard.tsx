@@ -26,9 +26,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       {/* Content */}
       <div className="p-6">
         <h3 className="text-2xl font-medium">{project.title}</h3>
-        <p className="mt-3 text-sm text-white/60">
-          {project.description}
-        </p>
+        <p className="mt-3 text-sm text-white/60">{project.description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tools.map((tool) => (
@@ -42,14 +40,15 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="mt-6 flex items-center gap-6">
-          {project.href && (
-            <a className="text-sm underline-offset-4 hover:underline">
-              View Project →
-            </a>
-          )}
+          {project.href && <a className="text-sm underline-offset-4 hover:underline">View Project →</a>}
           {project.repo && (
-            <a className="text-sm text-white/50 hover:text-white">
-              Repository
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/50 hover:text-white"
+            >
+              Repository ↗
             </a>
           )}
         </div>

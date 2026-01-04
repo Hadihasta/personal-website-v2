@@ -10,12 +10,12 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mt-6 text-white/60 max-w-xl">
-          Selected works combining engineering, interaction, real case.
+          Selected works combining engineering and use case.
         </p>
       </section>
 
       {/* Editorial storytelling */}
-      <EditorialBlock />
+      {/* <EditorialBlock /> */}
 
       {/* Main project grid */}
       <ProjectGrid projects={projects} />

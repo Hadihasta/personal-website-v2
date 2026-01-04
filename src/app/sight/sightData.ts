@@ -71,7 +71,7 @@ export const trueSight: TrueSightItem[] = [
     location: 'Remote',
     status: 'Done',
     description:
-      'While working, I decided to revisit my passion for software development. I enrolled in Rakamin Academy’s Full-stack Web Developer program, rebuilding my fundamentals and sharpening my skills through structured learning and hands-on projects.',
+      'While working, I decided to revisit my passion for software development. I enrolled in Rakamin Academy’s Full-stack Web Developer program, rebuilding my fundamentals and sharpening my skills through structured learning and hands on projects.',
   },
   {
     year: '2024 – 2025',
