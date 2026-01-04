@@ -3,6 +3,7 @@ import { useState } from 'react'
 import type { MouseEvent } from 'react'
 import styles from './FirstSection.module.css'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import {
   IconBrandTailwind,
   IconBrandNextjs,
@@ -18,14 +19,16 @@ const FirstSection = () => {
   const [cursor, setCursor] = useState({ x: 0, y: 0 })
   const [active, setActive] = useState(false)
 
- const handleMove = (e: MouseEvent<HTMLDivElement>) => {
-  const rect = e.currentTarget.getBoundingClientRect()
+    const router = useRouter()
 
-  setCursor({
-    x: e.clientX - rect.left,
-    y: e.clientY - rect.top,
-  })
-}
+  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+
+    setCursor({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    })
+  }
 
   const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -43,7 +46,7 @@ const FirstSection = () => {
           className={`flex-row gap-4 mt-10`}
         >
           {/* <button className={`${styles.buttonBorder}`}>Project</button> */}
-          <button className={`${styles.buttonBorder}`}>More About Me</button>
+          <button className={`${styles.buttonBorder}`} onClick={ ()=>{router.push('/more')}}>More About Me</button>
         </div>
 
         <div
@@ -67,11 +70,12 @@ const FirstSection = () => {
             className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
           />
 
-          <a href="resume/HIJRI ISMAIL HADI_CV Des.pdf">
+       
             <IconFile
-              className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
+             onClick={() => openLink('https://drive.google.com/file/d/1rS6glMtSLCMZppNdS3FdWZ2pN4dpxZrc/view?usp=sharing')}
+           className={`${styles.hideCursor} size-10 p-2 rounded-full cursor-pointer ring-1 ring-gray-900/5 dark:bg-blueDark dark:ring-white/20`}
             />
-          </a>
+        
 
           <IconBrandLinkedin
             onClick={() => openLink('https://www.linkedin.com/in/hijri-hadi-22289b23a/')}
