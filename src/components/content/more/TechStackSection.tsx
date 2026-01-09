@@ -37,8 +37,8 @@ const techStack: TechCategory[] = [
   {
     title: 'Programming Language',
     items: [
-        { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-        { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+      { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
       { name: 'C#', icon: SiSharp, color: '#512BD4' },
     ],
   },
@@ -108,12 +108,17 @@ export default function TechStackSection() {
                   return (
                     <div
                       key={item.name}
-                      className="pentagon flex aspect-square flex-col items-center justify-center bg-blueDark transition hover:scale-105"
-                      style={{
-                        boxShadow: `0 0 0 transparent`,
-                      }}
+                      className="
+    flex aspect-square flex-col items-center justify-center
+    rounded-2xl
+    bg-white/5 backdrop-blur
+    border border-white/10
+    transition
+    hover:scale-105
+  "
+                      style={{ boxShadow: '0 0 0 transparent' }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 22px ${item.color}55`
+                        e.currentTarget.style.boxShadow = `0 0 28px ${item.color}55`
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.boxShadow = '0 0 0 transparent'
