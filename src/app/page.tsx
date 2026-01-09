@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div>
-      <MainVektorBG />
+      {/* <MainVektorBG /> */}
       <div
         id="layout"
         className="fade-in px-5 md:px-20"
@@ -76,7 +76,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <div
               id="about_me"
               className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 "
@@ -84,7 +84,7 @@ export default function Home() {
               Spotlight
             </div>
             <SlideContent />
-          </div>
+          </div> */}
 
           <div
             id="third_section"
