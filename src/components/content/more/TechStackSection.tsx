@@ -19,6 +19,9 @@ import {
   SiDocker,
   SiGithub,
   SiGitlab,
+  SiLaravel,  
+  SiPhp,      
+  SiGo, 
 } from 'react-icons/si'
 import { VscAzure } from 'react-icons/vsc'
 
@@ -34,12 +37,14 @@ type TechCategory = {
 }
 
 const techStack: TechCategory[] = [
-  {
+ {
     title: 'Programming Language',
     items: [
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
       { name: 'C#', icon: SiSharp, color: '#512BD4' },
+      { name: 'PHP', icon: SiPhp, color: '#8892BF' },       // tambahan
+      { name: 'Golang', icon: SiGo, color: '#00ADD8' },     // tambahan
     ],
   },
   {
@@ -56,6 +61,7 @@ const techStack: TechCategory[] = [
     items: [
       { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
       { name: '.NET', icon: SiDotnet, color: '#512BD4' },
+      { name: 'Laravel', icon: SiLaravel, color: '#FF2D20' }, // tambahan
     ],
   },
   {
