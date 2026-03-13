@@ -57,27 +57,37 @@ const NavbarDesktop = () => {
     <div className="hidden lg:flex justify-center z-50 mt-8 px-6">
       <nav
         ref={navRef}
-        className="relative flex items-center gap-1 rounded-2xl px-3 py-2 border border-white/8 backdrop-blur-xl"
+        className="relative flex items-center gap-1 rounded-2xl px-3 py-2 backdrop-blur-xl"
         style={{
-          background: 'linear-gradient(135deg, rgba(30,41,59,0.85) 0%, rgba(45,62,80,0.75) 100%)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06)',
+          background: 'linear-gradient(135deg, rgba(13,17,23,0.92) 0%, rgba(15,22,33,0.88) 100%)',
+          border: '1px solid rgba(91,141,239,0.18)',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.5), 0 0 32px rgba(91,141,239,0.06), inset 0 1px 0 rgba(91,141,239,0.1)',
         }}
       >
         {/* sliding background pill */}
         <span
           ref={indicatorRef}
-          className="absolute top-2 h-[calc(100%-16px)] rounded-xl bg-blueDisable/20 border border-blueDisable/30 pointer-events-none"
-          style={{ left: 0, width: 80 }}
+          className="absolute top-2 h-[calc(100%-16px)] rounded-xl pointer-events-none"
+          style={{
+            left: 0,
+            width: 80,
+            background: 'rgba(91,141,239,0.12)',
+            border: '1px solid rgba(91,141,239,0.25)',
+            boxShadow: '0 0 12px rgba(91,141,239,0.15)',
+          }}
           aria-hidden
         />
 
-        {/* dot — logo mark */}
-        <span className="mr-3 ml-1 flex items-center gap-1.5 select-none">
-          <span className="w-1.5 h-1.5 rounded-full bg-blueDisable" />
-          <span className="w-1 h-1 rounded-full bg-blueDisable/40" />
+        {/* logo mark */}
+        <span className="mr-3 ml-1 flex items-center gap-1 select-none">
+          <span
+            className="w-2 h-2 rounded-full"
+            style={{ background: 'linear-gradient(135deg,#5B8DEF,#38BDF8)', boxShadow: '0 0 6px rgba(91,141,239,0.6)' }}
+          />
+          <span className="w-1 h-1 rounded-full" style={{ background: 'rgba(91,141,239,0.35)' }} />
         </span>
 
-        {navLinks.map(({ label, path }, idx) => {
+        {navLinks.map(({ label, path }) => {
           const isActive = pathname === path
           return (
             <button
@@ -86,25 +96,29 @@ const NavbarDesktop = () => {
               onClick={() => router.push(path)}
               onMouseEnter={() => setHovered(path)}
               onMouseLeave={() => setHovered(null)}
-              className={`
-                relative z-10 px-5 py-2 rounded-xl font-staat text-[15px] tracking-widest transition-colors duration-200
-                ${isActive ? 'text-white' : 'text-white/40 hover:text-white/80'}
-              `}
+              className="relative z-10 px-5 py-2 rounded-xl font-staat text-[15px] tracking-widest transition-all duration-200"
+              style={{
+                color: isActive ? '#fff' : 'rgba(123,158,200,0.5)',
+              }}
             >
               {label}
-              {/* active dot */}
               {isActive && (
-                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blueDisable" />
+                <span
+                  className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
+                  style={{ background: 'linear-gradient(90deg,#5B8DEF,#38BDF8)', boxShadow: '0 0 4px #38BDF8' }}
+                />
               )}
             </button>
           )
         })}
 
-        {/* right divider + status */}
-        <span className="ml-2 mr-1 h-4 w-px bg-white/10" />
+        {/* divider + status */}
+        <span className="ml-2 mr-1 h-4 w-px" style={{ background: 'rgba(91,141,239,0.2)' }} />
         <span className="flex items-center gap-1.5 px-3 select-none">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-staat text-[12px] tracking-widest text-white/30 uppercase">Available</span>
+          <span className="font-staat text-[12px] tracking-widest uppercase" style={{ color: 'rgba(91,141,239,0.45)' }}>
+            Available
+          </span>
         </span>
       </nav>
     </div>

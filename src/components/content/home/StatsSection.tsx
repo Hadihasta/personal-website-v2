@@ -60,15 +60,36 @@ export default function StatsSection() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="stat-card backdrop-blur-md bg-white/5 border border-blueLine/20 rounded-2xl px-8 py-7 flex flex-col gap-2 transition hover:scale-[1.02] hover:border-blueDisable/40"
+              className="stat-card backdrop-blur-md rounded-2xl px-8 py-7 flex flex-col gap-2 transition hover:scale-[1.02]"
+              style={{
+                background: 'rgba(91,141,239,0.05)',
+                border: '1px solid rgba(91,141,239,0.18)',
+                boxShadow: '0 0 32px rgba(91,141,239,0.06), inset 0 1px 0 rgba(91,141,239,0.1)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.boxShadow =
+                  '0 0 40px rgba(91,141,239,0.18), inset 0 1px 0 rgba(56,189,248,0.15)'
+                ;(e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(56,189,248,0.35)'
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.boxShadow =
+                  '0 0 32px rgba(91,141,239,0.06), inset 0 1px 0 rgba(91,141,239,0.1)'
+                ;(e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(91,141,239,0.18)'
+              }}
             >
               <span
                 id={`stat-num-${i}`}
-                className="font-rowdies text-5xl font-bold text-blueDisable"
+                className="font-rowdies text-5xl font-bold"
+                style={{
+                  background: 'linear-gradient(135deg, #5B8DEF, #38BDF8)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
               >
                 0{stat.suffix}
               </span>
-              <span className="text-sm text-white/50 tracking-widest uppercase font-staat">
+              <span className="text-sm tracking-widest uppercase font-staat" style={{ color: 'rgba(91,141,239,0.55)' }}>
                 {stat.label}
               </span>
             </div>

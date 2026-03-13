@@ -415,13 +415,13 @@
 .fakeBlock {
   display: block;
   border-radius: 4px;
-  background: rgba(158, 174, 200, 0.12);
+  background: rgba(91, 141, 239, 0.12);
   height: 8px;
 }
 
 .fakeCard {
-  background: rgba(158, 174, 200, 0.04);
-  border: 1px solid rgba(158, 174, 200, 0.07);
+  background: rgba(91, 141, 239, 0.04);
+  border: 1px solid rgba(91, 141, 239, 0.1);
   border-radius: 7px;
   padding: 8px;
 }
@@ -458,7 +458,8 @@
   transform: translate(-50%, -50%) scale(0.7);
   opacity: 0;
   transition: transform 0.6s ease, opacity 0.4s ease;
-  color: #9eaec8;
+  color: #5B8DEF;
+  filter: drop-shadow(0 0 6px rgba(91,141,239,0.4));
 }
 
 .iconArea:hover .icon {
