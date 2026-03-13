@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 import RecentlyPost from '@/components/content/home/RecentlyPost'
 import ElabramPost from '@/components/content/home/ElabramPost'
 import FooterLayout from '@/components/content/home/FooterLayout'
-import StatsSection from '@/components/content/home/StatsSection'
 import { gsap } from 'gsap'
 import { usePathname } from 'next/navigation'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -206,8 +205,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── Stats section ── */}
-        <StatsSection />
+     
 
         {/* ── Body ── */}
         <div id="body_layout" className="px-5 md:px-20">
