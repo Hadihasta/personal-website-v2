@@ -40,6 +40,31 @@
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  position: relative;
+}
+
+.progressLine {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .progressLine {
+    display: block;
+    position: absolute;
+    left: 89px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(78, 116, 167, 0.4) 10%,
+      rgba(78, 116, 167, 0.4) 90%,
+      transparent
+    );
+    will-change: transform;
+    pointer-events: none;
+  }
 }
 
 .timelineItem {

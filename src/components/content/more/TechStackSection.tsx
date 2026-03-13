@@ -1,5 +1,8 @@
 'use client'
 
+import { useRef } from 'react'
+import type { MouseEvent } from 'react'
+import { gsap } from 'gsap'
 import {
   SiSharp,
   SiJavascript,
@@ -19,9 +22,9 @@ import {
   SiDocker,
   SiGithub,
   SiGitlab,
-  SiLaravel,  
-  SiPhp,      
-  SiGo, 
+  SiLaravel,
+  SiPhp,
+  SiGo,
 } from 'react-icons/si'
 import { VscAzure } from 'react-icons/vsc'
 
@@ -37,14 +40,14 @@ type TechCategory = {
 }
 
 const techStack: TechCategory[] = [
- {
+  {
     title: 'Programming Language',
     items: [
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
       { name: 'C#', icon: SiSharp, color: '#512BD4' },
-      { name: 'PHP', icon: SiPhp, color: '#8892BF' },       // tambahan
-      { name: 'Golang', icon: SiGo, color: '#00ADD8' },     // tambahan
+      { name: 'PHP', icon: SiPhp, color: '#8892BF' },
+      { name: 'Golang', icon: SiGo, color: '#00ADD8' },
     ],
   },
   {
@@ -61,7 +64,7 @@ const techStack: TechCategory[] = [
     items: [
       { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
       { name: '.NET', icon: SiDotnet, color: '#512BD4' },
-      { name: 'Laravel', icon: SiLaravel, color: '#FF2D20' }, // tambahan
+      { name: 'Laravel', icon: SiLaravel, color: '#FF2D20' },
     ],
   },
   {
@@ -96,48 +99,81 @@ const techStack: TechCategory[] = [
   },
 ]
 
+function TechCard({ item }: { item: TechItem }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const Icon = item.icon
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const el = cardRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    gsap.to(el, {
+      rotateY: x * 18,
+      rotateX: -y * 18,
+      transformPerspective: 600,
+      ease: 'power2.out',
+      duration: 0.3,
+    })
+  }
+
+  const handleMouseLeave = () => {
+    gsap.to(cardRef.current, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.6,
+      ease: 'elastic.out(1, 0.6)',
+    })
+  }
+
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="flex aspect-square flex-col items-center justify-center rounded-2xl bg-white/5 backdrop-blur border border-white/10 transition hover:scale-[1.04] cursor-default"
+      style={{
+        transformStyle: 'preserve-3d',
+        willChange: 'transform',
+        boxShadow: '0 0 0 transparent',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 28px ${item.color}55`
+        e.currentTarget.style.borderColor = `${item.color}40`
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.boxShadow = '0 0 0 transparent'
+        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'
+      }}
+    >
+      <Icon className="mb-3 text-4xl" style={{ color: item.color }} />
+      <span className="text-sm font-medium text-white/70 font-staat">{item.name}</span>
+    </div>
+  )
+}
+
 export default function TechStackSection() {
   return (
-    <section className="py-24 bg-gradient-to-b to-transparent">
+    <section className="py-24">
       <div className="container mx-auto px-6">
-        <h2 className="mb-16 text-center text-3xl font-bold text-white md:text-4xl">Tech Stack</h2>
+        <h2 className="mb-3 text-center text-3xl font-rowdies font-bold text-white md:text-4xl">
+          Tech Stack
+        </h2>
+        <p className="text-center text-sm text-white/30 mb-16 font-staat tracking-widest uppercase">
+          Tools & technologies I work with
+        </p>
 
         <div className="space-y-16">
           {techStack.map((category) => (
             <div key={category.title}>
-              <h3 className="mb-8 text-xl font-semibold text-white">{category.title}</h3>
-
+              <h3 className="mb-8 text-base font-semibold text-white/50 font-staat tracking-widest uppercase">
+                {category.title}
+              </h3>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                {category.items.map((item) => {
-                  const Icon = item.icon
-
-                  return (
-                    <div
-                      key={item.name}
-                      className="
-    flex aspect-square flex-col items-center justify-center
-    rounded-2xl
-    bg-white/5 backdrop-blur
-    border border-white/10
-    transition
-    hover:scale-105
-  "
-                      style={{ boxShadow: '0 0 0 transparent' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 28px ${item.color}55`
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.boxShadow = '0 0 0 transparent'
-                      }}
-                    >
-                      <Icon
-                        className="mb-3 text-4xl"
-                        style={{ color: item.color }}
-                      />
-                      <span className="text-sm font-medium text-neutral-200">{item.name}</span>
-                    </div>
-                  )
-                })}
+                {category.items.map((item) => (
+                  <TechCard key={item.name} item={item} />
+                ))}
               </div>
             </div>
           ))}

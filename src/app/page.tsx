@@ -1,107 +1,236 @@
 'use client'
 
-import { useEffect } from 'react'
-import MainVektorBG from '@/components/vektorComponent/MainVektorBG'
-import RecentlyPost from '@/components/home/post/RecentlyPost'
-import ElabramPost from '@/components/home/retro/ElabramPost'
-import FooterLayout from '@/components/home/footer/FooterLayout'
-import SlideContent from '@/components/home/content/SlideContent'
+import { useEffect, useRef } from 'react'
+import RecentlyPost from '@/components/content/home/RecentlyPost'
+import ElabramPost from '@/components/content/home/ElabramPost'
+import FooterLayout from '@/components/content/home/FooterLayout'
+import StatsSection from '@/components/content/home/StatsSection'
 import { gsap } from 'gsap'
 import { usePathname } from 'next/navigation'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { TextPlugin } from 'gsap/TextPlugin'
+import { Observer } from 'gsap/Observer'
 import FirstSection from '@/components/content/home/FirstSection'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, TextPlugin, Observer)
 
 export default function Home() {
   const pathname = usePathname()
+  const heroRef = useRef<HTMLDivElement>(null)
+  const decorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.fade-in', {
-        scrollTrigger: {
-          trigger: '.fade-in',
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-      })
+    const mm = gsap.matchMedia()
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const ctx = gsap.context(() => {
+        // ── Hero entrance ──────────────────────────────────────
+        const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } })
+        heroTl
+          .from('#layout', { opacity: 0, y: 60, duration: 1.2 })
+          .from('#noise-overlay', { opacity: 0, duration: 0.8 }, '<')
+          .from(
+            '.decor-line',
+            { scaleX: 0, transformOrigin: 'left', duration: 0.8, stagger: 0.15 },
+            '-=0.4',
+          )
+          .from(
+            '.decor-circle',
+            { scale: 0, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)' },
+            '-=0.5',
+          )
 
-      gsap.from('.wait-scroll-in', {
-        scrollTrigger: {
-          trigger: '.wait-scroll-in',
-          start: 'top center',
-        },
-        opacity: 0,
-        y: 100,
-        duration: 3,
+        // ── Floating decorations parallax ──────────────────────
+        gsap.to('.float-slow', {
+          y: -40,
+          scrollTrigger: { trigger: '#layout', start: 'top top', end: 'bottom top', scrub: 1.5 },
+        })
+        gsap.to('.float-fast', {
+          y: -90,
+          scrollTrigger: { trigger: '#layout', start: 'top top', end: 'bottom top', scrub: 0.8 },
+        })
+
+        // ── Section label reveal ───────────────────────────────
+        gsap.utils.toArray<HTMLElement>('.section-label').forEach((el) => {
+          gsap.from(el, {
+            scrollTrigger: { trigger: el, start: 'top 85%' },
+            x: -60,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power4.out',
+          })
+        })
+
+        // ── Recently Post section ──────────────────────────────
+        const recentlyTl = gsap.timeline({
+          scrollTrigger: { trigger: '#secondary_section', start: 'top 75%' },
+        })
+        recentlyTl
+          .from('#recently-heading', { y: 80, opacity: 0, duration: 1, ease: 'expo.out' })
+          .from(
+            '#recently-heading .heading-underline',
+            { scaleX: 0, transformOrigin: 'left', duration: 0.6 },
+            '-=0.3',
+          )
+
+        // ── Retro section ──────────────────────────────────────
+        const retroTl = gsap.timeline({
+          scrollTrigger: { trigger: '#third_section', start: 'top 80%' },
+        })
+        retroTl
+          .from('#retro-heading', { y: 80, opacity: 0, duration: 1, ease: 'expo.out' })
+          .from(
+            '#retro-content',
+            { y: 50, opacity: 0, duration: 0.9, ease: 'power3.out' },
+            '-=0.2',
+          )
+          .from(
+            '.retro-decor',
+            { scale: 0, opacity: 0, duration: 0.5, stagger: 0.08, ease: 'back.out(1.7)' },
+            '<',
+          )
+
+        // ── Footer ─────────────────────────────────────────────
+        gsap.from('#footer-inner', {
+          scrollTrigger: { trigger: '#footer-inner', start: 'top 90%' },
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+        })
+
+        // ── Marquee ────────────────────────────────────────────
+        gsap.to('.marquee-inner', { x: '-50%', duration: 18, repeat: -1, ease: 'none' })
+
+        // ── Scroll-progress bar ───────────────────────────────
+        gsap.to('#scroll-progress', {
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: 'body',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: true,
+          },
+        })
       })
+      return () => ctx.revert()
     })
-
-    return () => ctx.revert()
+    return () => mm.revert()
   }, [pathname])
 
   return (
-    <div>
-      {/* <MainVektorBG /> */}
+    <>
+      {/* ── Scroll progress bar ───────────────────────── */}
       <div
-        id="layout"
-        className="fade-in px-5 md:px-20"
+        id="scroll-progress"
+        className="fixed top-0 left-0 right-0 z-50 h-[2px] bg-blueDisable origin-left"
+        style={{ transform: 'scaleX(0)' }}
+      />
+
+      {/* ── Noise overlay ──────────────────────────────── */}
+      <div
+        id="noise-overlay"
+        className="pointer-events-none fixed inset-0 z-40 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundSize: '128px',
+        }}
+      />
+
+      {/* ── Decorative floating elements ──────────────── */}
+      <div
+        ref={decorRef}
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        aria-hidden
       >
-        <div
-          id="logo-main"
-          className="flex"
-        ></div>
-        <FirstSection />
+        <div className="float-slow absolute -top-32 -right-32 h-96 w-96 rounded-full bg-blueDisable/5 blur-3xl" />
+        <div className="float-fast absolute bottom-1/3 -left-24 h-64 w-64 rounded-full bg-blueDisable/4 blur-2xl" />
+        <div className="decor-line absolute top-24 left-0 h-[1px] w-1/3 bg-gradient-to-r from-transparent via-blueDisable/30 to-transparent" />
+        <div className="decor-line absolute top-1/2 right-0 h-[1px] w-1/4 bg-gradient-to-l from-transparent via-blueDisable/20 to-transparent" />
+        <div className="decor-circle absolute top-1/3 right-16 h-3 w-3 rounded-full border border-blueDisable/40" />
+        <div className="decor-circle absolute top-2/3 left-24 h-2 w-2 rounded-full bg-blueDisable/30" />
+        <div className="decor-circle absolute bottom-1/4 right-1/3 h-4 w-4 rounded-full border border-blueDisable/20" />
       </div>
 
-      <div
-        id="body_layout"
-        className="px-5 md:px-20"
-      >
-        {/* secondary layout */}
+      {/* ── Main content ──────────────────────────────── */}
+      <div className="relative z-10">
+        {/* ── Hero ── */}
         <div
-          id="secondary_layout"
-          className=" px-5  md:px-20  "
+          id="layout"
+          ref={heroRef}
+          className="relative px-5 md:px-20 overflow-hidden"
         >
-          <div
-            id="secondary_section"
-            className="wait-scroll-in"
-          >
-            <div className="text-center md:text-left! font-rowdies text-blueDisable font-bold text-48 flex   mt-100 ">
-              Recently Post
-            </div>
-            <div>
-              <RecentlyPost />
-            </div>
-          </div>
+          <FirstSection />
+        </div>
 
-          {/* <div>
-            <div
-              id="about_me"
-              className=" flex text-center  justify-center font-rowdies text-blueDisable font-bold text-48  mt-100 "
-            >
-              Spotlight
-            </div>
-            <SlideContent />
-          </div> */}
-
-          <div
-            id="third_section"
-            className="wait-second-in "
-          >
-            <div className="font-rowdies text-blueDisable font-bold text-48 flex   mt-100 ">Retro</div>
-            <div>
-              <ElabramPost />
-            </div>
+        {/* ── Ambient marquee strip ── */}
+        <div className="relative overflow-hidden border-y border-blueDisable/10 py-3 my-8 select-none">
+          <div className="marquee-inner flex gap-16 whitespace-nowrap w-max">
+            {[...Array(2)].map((_, i) => (
+              <span
+                key={i}
+                className="flex gap-16 font-rowdies text-blueDisable/20 text-sm tracking-widest uppercase"
+              >
+                {['Personal', '·', 'Blog', '·', 'Retro', '·', 'Code', '·', 'Design', '·', 'Ideas', '·'].map(
+                  (w, j) => <span key={j}>{w}</span>,
+                )}
+              </span>
+            ))}
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="mt-50">
-          <FooterLayout />
-        </footer>
+        {/* ── Stats section ── */}
+        <StatsSection />
+
+        {/* ── Body ── */}
+        <div id="body_layout" className="px-5 md:px-20">
+          <div id="secondary_layout" className="px-5 md:px-20">
+
+            {/* Recently Post */}
+            <div id="secondary_section">
+              <div
+                id="recently-heading"
+                className="section-label relative flex items-center gap-4 mt-24"
+              >
+                <span className="font-rowdies text-blueDisable font-bold text-48">
+                  Recently Post
+                </span>
+                <span className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-full bg-blueDisable/30 origin-left" />
+              </div>
+              <div id="recently-content">
+                <RecentlyPost />
+              </div>
+            </div>
+
+            {/* Work Experience @ Elabram */}
+            <div id="third_section" className="relative">
+              <div className="pointer-events-none absolute -left-6 top-24 flex flex-col gap-1.5" aria-hidden>
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="retro-decor h-1.5 w-1.5 rounded-full bg-blueDisable/30" />
+                ))}
+              </div>
+
+              <div id="retro-heading" className="section-label relative flex items-center gap-4 mt-24">
+                <span className="font-rowdies text-blueDisable font-bold text-48">
+                  Work Experience
+                </span>
+                <span className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-32 bg-blueDisable/30 origin-left" />
+              </div>
+              <p className="mt-3 text-sm text-white/40 font-staat tracking-widest uppercase">@ Elabram Systems</p>
+              <div id="retro-content">
+                <ElabramPost />
+              </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <footer className="mt-24">
+            <div id="footer-inner">
+              <FooterLayout />
+            </div>
+          </footer>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
