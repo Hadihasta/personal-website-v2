@@ -37,7 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${rowdies.variable}  ${staatliches.variable} ${robotoSlab.variable} antialiased bg-linear-[171deg] from-blueDark to-muteGrey min-h-screen cursor-default `}
+        className={` ${rowdies.variable}  ${staatliches.variable} ${robotoSlab.variable} antialiased min-h-screen cursor-default `}
+        style={{
+          background: 'linear-gradient(160deg, #0d1117 0%, #0f1621 30%, #111827 55%, #0e1a2e 80%, #0d1117 100%)',
+        }}
       >
       <Navbar />
         {children}

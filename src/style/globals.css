@@ -28,25 +28,27 @@ body {
 }
 
 @theme {
-  /* color */
-  /* (shadow) */
-  --color-muteGrey: #2d3e50;
-  /* biru tua */
-  --color-blueDark: #1e293b;
-  /* biru muda */
-  --color-blueDisable: #4e74a7;
-  /* // stroke dan line jpg */
-  --color-blueLine : #9EAEC8;
+  /* ── Base palette ── */
+  --color-muteGrey:   #1a2332;   /* deep navy-charcoal (was #2d3e50) */
+  --color-blueDark:   #0d1117;   /* near-black GitHub-dark (was #1e293b) */
 
+  /* ── Accent: electric indigo-cyan ── */
+  --color-blueDisable: #6C8EBF;  /* softer slate-blue for text (was #4e74a7) */
+  --color-accent:      #5B8DEF;  /* bright royal-blue, primary interactive */
+  --color-accentGlow:  #3D6FD4;  /* deeper for shadows/glows */
+  --color-cyan:        #38BDF8;  /* electric cyan highlight */
+  --color-indigo:      #818CF8;  /* indigo tint for gradient variety */
 
-  /* text */
+  /* ── Stroke / line ── */
+  --color-blueLine:  #7B9EC8;    /* slightly brighter stroke (was #9EAEC8) */
+
+  /* ── Text sizes ── */
   --text-24: 24px;
   --text-36: 36px;
   --text-48: 48px;
 
-  /* Border radius */
+  /* ── Border radius ── */
   --radius-50: 50px;
-
 }
 
 
@@ -60,14 +62,15 @@ body {
   font-family: var(--font-roboto-slab);
 }
 
-/* glass effect */
+/* ── Glass card ───────────────────────────────────────── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0px 0px rgba(255, 255, 255, 0);
+  border: 1px solid rgba(91, 141, 239, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -79,7 +82,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(91, 141, 239, 0.5), rgba(56, 189, 248, 0.3), transparent);
 }
 
 .glass-card::after {
@@ -89,7 +92,47 @@ body {
   left: 0;
   width: 1px;
   height: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+  background: linear-gradient(180deg, rgba(91, 141, 239, 0.4), transparent);
+}
+
+/* ── Gradient text ────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #5B8DEF 0%, #38BDF8 50%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #6C8EBF 0%, #5B8DEF 40%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Accent glow button ───────────────────────────────── */
+.btn-glow {
+  position: relative;
+  background: linear-gradient(135deg, #5B8DEF, #3D6FD4);
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(91, 141, 239, 0.45), 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ── Accent border glow ───────────────────────────────── */
+.border-glow {
+  border: 1px solid rgba(91, 141, 239, 0.3);
+  box-shadow: 0 0 16px rgba(91, 141, 239, 0.1), inset 0 1px 0 rgba(91, 141, 239, 0.08);
 }
 
 

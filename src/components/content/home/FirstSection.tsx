@@ -277,10 +277,21 @@ const FirstSection = () => {
         </div> */}
 
         {/* Heading */}
-        <h1 className="hero-line font-rowdies text-5xl lg:text-6xl font-bold leading-tight text-blueDisable">
+        <h1
+          className="hero-line font-rowdies text-5xl lg:text-6xl font-bold leading-tight"
+          style={{
+            background: 'linear-gradient(135deg, #c8d8f0 0%, #5B8DEF 40%, #38BDF8 75%, #818CF8 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
           {`I'm Hadi`}
         </h1>
-        <h2 className="hero-line font-rowdies text-2xl lg:text-3xl font-bold text-blueDisable/40 mt-1">
+        <h2
+          className="hero-line font-rowdies text-2xl lg:text-3xl font-bold mt-1"
+          style={{ color: 'rgba(91,141,239,0.45)' }}
+        >
           Fullstack Developer
         </h2>
 

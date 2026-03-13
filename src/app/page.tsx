@@ -123,14 +123,17 @@ export default function Home() {
       {/* ── Scroll progress bar ───────────────────────── */}
       <div
         id="scroll-progress"
-        className="fixed top-0 left-0 right-0 z-50 h-[2px] bg-blueDisable origin-left"
-        style={{ transform: 'scaleX(0)' }}
+        className="fixed top-0 left-0 right-0 z-50 h-[2px] origin-left"
+        style={{
+          transform: 'scaleX(0)',
+          background: 'linear-gradient(90deg, #5B8DEF, #38BDF8, #818CF8)',
+        }}
       />
 
       {/* ── Noise overlay ──────────────────────────────── */}
       <div
         id="noise-overlay"
-        className="pointer-events-none fixed inset-0 z-40 opacity-[0.03]"
+        className="pointer-events-none fixed inset-0 z-40 opacity-[0.025]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           backgroundSize: '128px',
@@ -143,13 +146,33 @@ export default function Home() {
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
         aria-hidden
       >
-        <div className="float-slow absolute -top-32 -right-32 h-96 w-96 rounded-full bg-blueDisable/5 blur-3xl" />
-        <div className="float-fast absolute bottom-1/3 -left-24 h-64 w-64 rounded-full bg-blueDisable/4 blur-2xl" />
-        <div className="decor-line absolute top-24 left-0 h-[1px] w-1/3 bg-gradient-to-r from-transparent via-blueDisable/30 to-transparent" />
-        <div className="decor-line absolute top-1/2 right-0 h-[1px] w-1/4 bg-gradient-to-l from-transparent via-blueDisable/20 to-transparent" />
-        <div className="decor-circle absolute top-1/3 right-16 h-3 w-3 rounded-full border border-blueDisable/40" />
-        <div className="decor-circle absolute top-2/3 left-24 h-2 w-2 rounded-full bg-blueDisable/30" />
-        <div className="decor-circle absolute bottom-1/4 right-1/3 h-4 w-4 rounded-full border border-blueDisable/20" />
+        {/* primary glow — top right, blue */}
+        <div
+          className="float-slow absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(91,141,239,0.12) 0%, transparent 70%)' }}
+        />
+        {/* secondary glow — bottom left, cyan */}
+        <div
+          className="float-fast absolute bottom-1/4 -left-32 h-80 w-80 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%)' }}
+        />
+        {/* tertiary glow — center, indigo */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(129,140,248,0.05) 0%, transparent 70%)' }}
+        />
+        {/* decorative lines */}
+        <div className="decor-line absolute top-24 left-0 h-[1px] w-1/3"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(91,141,239,0.4), rgba(56,189,248,0.2), transparent)' }} />
+        <div className="decor-line absolute top-1/2 right-0 h-[1px] w-1/4"
+          style={{ background: 'linear-gradient(270deg, transparent, rgba(129,140,248,0.3), transparent)' }} />
+        {/* decorative circles */}
+        <div className="decor-circle absolute top-1/3 right-16 h-3 w-3 rounded-full"
+          style={{ border: '1px solid rgba(91,141,239,0.5)', boxShadow: '0 0 8px rgba(91,141,239,0.3)' }} />
+        <div className="decor-circle absolute top-2/3 left-24 h-2 w-2 rounded-full"
+          style={{ background: 'rgba(56,189,248,0.4)' }} />
+        <div className="decor-circle absolute bottom-1/4 right-1/3 h-4 w-4 rounded-full"
+          style={{ border: '1px solid rgba(129,140,248,0.3)' }} />
       </div>
 
       {/* ── Main content ──────────────────────────────── */}
@@ -164,12 +187,16 @@ export default function Home() {
         </div>
 
         {/* ── Ambient marquee strip ── */}
-        <div className="relative overflow-hidden border-y border-blueDisable/10 py-3 my-8 select-none">
+        <div
+          className="relative overflow-hidden py-3 my-8 select-none"
+          style={{ borderTop: '1px solid rgba(91,141,239,0.12)', borderBottom: '1px solid rgba(91,141,239,0.12)' }}
+        >
           <div className="marquee-inner flex gap-16 whitespace-nowrap w-max">
             {[...Array(2)].map((_, i) => (
               <span
                 key={i}
-                className="flex gap-16 font-rowdies text-blueDisable/20 text-sm tracking-widest uppercase"
+                className="flex gap-16 font-rowdies text-sm tracking-widest uppercase"
+                style={{ color: 'rgba(91,141,239,0.25)' }}
               >
                 {['Personal', '·', 'Blog', '·', 'Retro', '·', 'Code', '·', 'Design', '·', 'Ideas', '·'].map(
                   (w, j) => <span key={j}>{w}</span>,
@@ -192,10 +219,13 @@ export default function Home() {
                 id="recently-heading"
                 className="section-label relative flex items-center gap-4 mt-24"
               >
-                <span className="font-rowdies text-blueDisable font-bold text-48">
+                <span className="font-rowdies font-bold text-48 gradient-text">
                   Recently Post
                 </span>
-                <span className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-full bg-blueDisable/30 origin-left" />
+                <span
+                  className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-full origin-left"
+                  style={{ background: 'linear-gradient(90deg, #5B8DEF, #38BDF8, transparent)' }}
+                />
               </div>
               <div id="recently-content">
                 <RecentlyPost />
@@ -211,12 +241,15 @@ export default function Home() {
               </div>
 
               <div id="retro-heading" className="section-label relative flex items-center gap-4 mt-24">
-                <span className="font-rowdies text-blueDisable font-bold text-48">
+                <span className="font-rowdies font-bold text-48 gradient-text">
                   Work Experience
                 </span>
-                <span className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-32 bg-blueDisable/30 origin-left" />
+                <span
+                  className="heading-underline absolute -bottom-2 left-0 block h-[2px] w-40 origin-left"
+                  style={{ background: 'linear-gradient(90deg, #5B8DEF, #818CF8, transparent)' }}
+                />
               </div>
-              <p className="mt-3 text-sm text-white/40 font-staat tracking-widest uppercase">@ Elabram Systems</p>
+              <p className="mt-3 text-sm font-staat tracking-widest uppercase" style={{ color: 'rgba(91,141,239,0.5)' }}>@ Elabram Systems</p>
               <div id="retro-content">
                 <ElabramPost />
               </div>
